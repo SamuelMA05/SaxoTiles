@@ -38,9 +38,28 @@ A continuación se presenta el pinout del Allwinner T-113:
 
 De aquí, se seleccionó que:
 
-1) El amplificador de audio se conectará en los pines HP OUT L y R, debido a que este estéreo. Existen algunos módulos de este amplificador que ya incluyen el potenciómetro, por lo cual no se requerirá de este elemento de manera externa para regular el volumen.
-2) Para el caso de los audífonos, el jack va a los mismos pines de antes. Por lo tanto, mediante un switch se debe seleccionar el modo de salida de audio.
-3) El sensor de presión se conectará al pin de convertidor análogo-digital GPADC.
-4) El DAC se conectará al pin I2S.
-5) La tira de LEDS se conectará como GPIO.
-6) El motor vibrador se conectará como GPIO.
+## 1. Salida de audio – Amplificador (PAM8403)
+El módulo amplificador se conectará a los pines **HP OUT L** y **HP OUT R** del Allwinner, ya que estos corresponden a la salida de audio estéreo (proveniente del DAC interno del chip). Algunos módulos PAM8403 ya incluyen potenciómetro integrado, por lo que no será necesario añadir uno externo para el control de volumen.
+
+---
+
+## 2. Salida de audio – Jack de audífonos
+El jack de audífonos también se conectará a los pines **HP OUT L** y **HP OUT R**.
+
+Dado que tanto el amplificador como el jack comparten la misma fuente de señal, se implementará un **switch** para elegir el modo de salida:
+- Modo parlant
+- Modo audífonos
+---
+
+## 3. Sensor de presión (MPXV7007)
+El sensor de presión entrega una señal **analógica**, por lo tanto debe conectarse al pin **GPADC**.
+
+---
+
+## 5. Tira de LEDs direccionables
+La tira de LEDs se conectará a un **GPIO configurado como salida digital**. Desde ahí se enviará la señal de control de datos.
+
+---
+
+## 6. Motor vibrador
+El motor vibrador se controlará mediante un **GPIO configurado como salida digital**.
