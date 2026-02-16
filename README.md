@@ -17,3 +17,7 @@ El proyecto consiste en la implementación de un Saxofón utilizando el SIP Allw
 5) Se podrán elegir entre tres niveles de dificultad para aprender a tocar este instrumento (Modo Aprendizaje): Fácil, Intermedio y Avanzado. Para cada nivel, existirá una canción para que el usuario mejore sus habilidades. Además, se implementará un Modo Libre, con el propósito de que el usuario pueda hacer una sesión de estudio personalizada.
 6) En la aplicación, la pantalla estará dividida en dos partes: La superior contará con el pentagrama donde se indica la melodía a interpretar, y la inferior tendrá un apoyo visual del saxofón para indicarle al usuario físicamente cuál nota debe tocar.
 7) En caso de que el usuario cometa un error tanto en ritmo como en la melodía, el dispositivo vibrará para indicarle que ha cometido un error. Adicionalmente, en el caso de que se eqvivoque en una nota (en el Modo Aprendizaje) esta no emitirá el sonido.
+
+
+## Diagrama de flujo
+<img width="3074" height="2900" alt="Diagrama" src="https://github.com/user-attachments/assets/78e6dfe8-dcd3-48f0-a50e-6ee41354de66" />
