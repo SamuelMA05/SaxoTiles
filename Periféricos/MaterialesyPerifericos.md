@@ -7,7 +7,9 @@
 ---
 
 ## 2. Sistema de Audio
-3) DAC para el sonido (incluido en la placa)  
+3) DAC PCM5102A
+<img width="960" height="960" alt="image" src="https://github.com/user-attachments/assets/17e47c55-e379-4267-90f4-10b50299d660" />
+
 4) Amplificador de Audio PAM8403  
 
 <img width="381" height="492" alt="PAM8403" src="https://github.com/user-attachments/assets/fcf5f442-4eef-45f8-b6fd-644aaca3b528" />
