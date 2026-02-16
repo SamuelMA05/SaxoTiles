@@ -8,7 +8,8 @@
 
 ## 2. Sistema de Audio
 3) DAC PCM5102A
-<img width="960" height="960" alt="image" src="https://github.com/user-attachments/assets/17e47c55-e379-4267-90f4-10b50299d660" />
+<img width="652" height="396" alt="image" src="https://github.com/user-attachments/assets/97c9a824-8300-49b7-8341-1ab8e0bff190" />
+
 
 4) Amplificador de Audio PAM8403  
 
