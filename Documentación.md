@@ -16,8 +16,19 @@ Es importante cambiar el serial3, por serial 0. Adicionalmente, en ese mismo doc
         status = "okay";
 };
 ```
-el status por defecto es "okay", nosotros deberemos de colocar "disabled".
+el status por defecto es "okay", nosotros deberemos de colocar "disabled", y después de ese bloque, debemos de poner:
+```
+&uart0 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&uart0_pe2_pins>;
+        status = "okay";
+};
+```
 
+Ahora, volviendo a la raíz del proyecto, se debe entrar al archivo build_u-boot.sh y como se puede ver en la imagen, el repositorio por defecto accede a una dirección de riscv, eso es incorrecto, se debe de reemplazar esa por arm, y eliminar la línea de 
+```
+git checkout -f
+```
 ### Preparación de la microSD
 
 Con eso listo, el siguiente paso es particionar la microSD. Accedo al menú de `fdisk` con:
@@ -46,5 +57,6 @@ Una vez lista la partición, grabo el bootloader directamente en la SD con:
 ```bash
 sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdc bs=1k seek=16400
 ```
+Este comando se coloca en la dirección de u-boot
 
 Este comando escribe el U-Boot (junto con el SPL) a partir del offset 16400 KB, que es la posición donde el ROM interno del T113 lo busca al encender el dispositivo. Es importante notar que esto se escribe **directamente sobre `/dev/sdc`**, no sobre la partición que creamos — esa la usaremos más adelante.
