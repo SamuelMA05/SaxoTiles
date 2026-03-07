@@ -51,6 +51,13 @@ sudo umount /dev/sdc*
 
 Luego con `lsblk` confirmo que la partición fue creada correctamente.
 
+Prosiguiendo, escribo este comando con el fin de formatear la partición:
+```bash
+sudo umount /dev/sdc*
+```
+sudo mkfs.fat /dev/sdc1
+
+
 ### Grabado del bootloader
 
 Una vez lista la partición, grabo el bootloader directamente en la SD con:
