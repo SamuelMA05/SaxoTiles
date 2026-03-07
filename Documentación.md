@@ -59,4 +59,11 @@ sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdc bs=1k seek=16400
 ```
 Este comando se coloca en la dirección de u-boot
 
-Este comando escribe el U-Boot (junto con el SPL) a partir del offset 16400 KB, que es la posición donde el ROM interno del T113 lo busca al encender el dispositivo. Es importante notar que esto se escribe **directamente sobre `/dev/sdc`**, no sobre la partición que creamos — esa la usaremos más adelante.
+Este comando escribe el U-Boot (junto con el SPL) a partir del offset 16400 KB, que es la posición donde el ROM interno del T113 lo busca al encender el dispositivo. Es importante notar que esto se escribe **directamente sobre `/dev/sdc`**, no sobre la partición que creamos, esa la usaremos más adelante.
+
+Desmonto nuevamente la sd, y para finalizar esta primera parte, se debe de colocar la micro en el SIP diseñado por el profesor, se conecta también el convertidor Serial-USB, y se lleva al pc, así como la alimentación de la placa. Desde ahí corro el siguiente comando:
+
+```bash
+sudo minicom -D /dev/ttyUSB0 -b 115200
+```
+Y veremos algo de la siguiente forma (después de aplicar el reset):
