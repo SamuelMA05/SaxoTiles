@@ -4,6 +4,19 @@ Antes de compilar, es necesario configurar el archivo `t113s_saxo_defconfig`, ub
 ```
 CONFIG_CONS_INDEX=1
 ```
+Otro archivo que se debe mirar dentro de la carpeta de parches, es el sunxi-d1s-t113s-saxo.dtsi, ahí aparece la siguiente línea:
+```
+stdout-path = "serial3:115200n8";
+```
+Es importante cambiar el serial3, por serial 0. Adicionalmente, en ese mismo documento, al final encontramos:
+```
+&uart3 {        
+        pinctrl-names = "default";
+        pinctrl-0 = <&uart3_pb_pins>;
+        status = "okay";
+};
+```
+el status por defecto es "okay", nosotros deberemos de colocar "disabled".
 
 ### Preparación de la microSD
 
