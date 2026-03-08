@@ -27,7 +27,7 @@ el status por defecto es "okay", nosotros deberemos de colocar "disabled", y des
 
 Ahora, volviendo a la raíz del proyecto, se debe entrar al archivo build_u-boot.sh y como se puede ver en la imagen, el repositorio por defecto accede a una dirección de riscv, eso es incorrecto, se debe de reemplazar esa por arm, y eliminar la línea de 
 
-![Error base del repositorio del juguetero](Imagenes/build.sh.png)
+![Build Script](Imagenes/build.sh.png)
 ```
 git checkout -f
 ```
