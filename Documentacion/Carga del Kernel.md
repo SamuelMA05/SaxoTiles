@@ -75,7 +75,7 @@ uart0_pe2_pins: uart0-pe2-pins {
 
 ### Creación y transferencia de la imagen
 
-El comando `bootz` de U-Boot permite arrancar una imagen comprimida de Linux desde memoria:
+El comando `bootz` de U-Boot permite arrancar una imagen comprimida de Linux desde memoria (lo usamos es en una variable de entorno, pero este comando es importante porque cargamos la imagen del kernel desde memoria):
 ```
 bootz [addr [initrd[:size]] [fdt]]
 ```
