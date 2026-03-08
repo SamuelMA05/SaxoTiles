@@ -162,11 +162,6 @@ Una vez configuradas las variables de entorno, ejecutar:
 ```
 run boot_mmc
 ```
-
-
 Y nos debe aparecer:
 ![.](../Imagenes/kernelCOrriendo.png)
 
-```
-
-Si todo está correctamente configurado, el sistema debería iniciar el kernel de Linux.
