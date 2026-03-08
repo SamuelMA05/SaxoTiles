@@ -19,3 +19,9 @@
 &cpu1 {
 	cpu-supply = <&reg_vcc_core>;
 };
+
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_pe2_pins>;
+	status = "okay";
+};

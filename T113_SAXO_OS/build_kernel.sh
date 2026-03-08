@@ -10,7 +10,6 @@ cp linux-patch-6.16.9/config  linux/.config
 
 cd linux
 
-git checkout -f
 
 patch -d . -p1 < ../linux-patch-6.16.9/0001-saxo-dtb-reference.patch
 
