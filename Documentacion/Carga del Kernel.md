@@ -162,6 +162,8 @@ Una vez configuradas las variables de entorno, ejecutar:
 ```
 run boot_mmc
 ```
+
+
 Y nos debe aparecer:
 ![.](../Imagenes/kernelCOrriendo.png)
 
