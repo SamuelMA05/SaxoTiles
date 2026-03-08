@@ -49,6 +49,9 @@ Dentro del menú interactivo, creo una nueva partición primaria con los siguien
 4. Presiono `t` para cambiar el tipo de partición, y escribo `b` para asignarle **FAT32**
 5. Finalmente presiono `w` para guardar los cambios
 
+Revisemos que el tipo de la partición sea el correcto
+![..](../Imagenes/revisionTipoParticion.png)
+
 Para verificar que todo quedó bien, desmonto la SD, la retiro y la vuelvo a insertar:
 ```bash
 sudo umount /dev/sdc*
