@@ -103,7 +103,8 @@ cp zImage /media/<usuario>/<particion>/
 cp ./allwinner/sun8i-t113s-saxo-gateway.dtb /media/<usuario>/<particion>/
 sync
 ```
-La dirección de la sd se encuentra aqui:
+La dirección de la sd se encuentra aqui (depende de su usuario y partición obviamente):
+
 ![.](../Imagenes/direccionMicro.png)
 
 Ahora, desmonte la SD.
