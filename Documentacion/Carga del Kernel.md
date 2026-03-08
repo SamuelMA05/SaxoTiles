@@ -102,7 +102,7 @@ cp zImage /media/<usuario>/<particion>/
 cp ./allwinner/sun8i-t113s-saxo-gateway.dtb /media/<usuario>/<particion>/
 sync
 ```
-
+Ahora, desmonte la SD.
 ---
 
 ### Arranque desde Minicom
