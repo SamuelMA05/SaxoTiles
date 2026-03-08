@@ -117,6 +117,7 @@ Ahora, desmonte la SD.
 ```
 fatls mmc 0:1
 ```
+![.](../Imagenes/fatls.png)
 
 #### Cargar la imagen en memoria
 ```
