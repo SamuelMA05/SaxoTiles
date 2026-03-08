@@ -83,3 +83,4 @@ Desmonto nuevamente la sd, y para finalizar esta primera parte, se debe de coloc
 sudo minicom -D /dev/ttyUSB0 -b 115200
 ```
 Y veremos algo de la siguiente forma (después de aplicar el reset):
+![.](../Imagenes/minicom1.png)
