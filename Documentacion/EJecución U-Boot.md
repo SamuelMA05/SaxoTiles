@@ -4,6 +4,8 @@ Antes de compilar, es necesario configurar el archivo `t113s_saxo_defconfig`, ub
 ```
 CONFIG_CONS_INDEX=1
 ```
+!(../Imagenes/defconfig.png)
+
 Otro archivo que se debe mirar dentro de la carpeta de parches, es el sunxi-d1s-t113s-saxo.dtsi, ahí aparece la siguiente línea:
 ```
 stdout-path = "serial3:115200n8";
@@ -27,7 +29,7 @@ el status por defecto es "okay", nosotros deberemos de colocar "disabled", y des
 
 Ahora, volviendo a la raíz del proyecto, se debe entrar al archivo build_u-boot.sh y como se puede ver en la imagen, el repositorio por defecto accede a una dirección de riscv, eso es incorrecto, se debe de reemplazar esa por arm, y eliminar la línea de 
 
-![Error del Juguetero](../Imagenes/build.sh.png)
+!(../Imagenes/build.sh.png)
 
 ```
 git checkout -f
