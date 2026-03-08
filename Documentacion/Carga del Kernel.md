@@ -89,7 +89,7 @@ sudo apt install -y mkbootimg
 
 #### Generación de la imagen de arranque
 
-Desde el directorio `T113_SAXO_OS/linux/arch/riscv/boot`, ejecutar:
+Desde el directorio `T113_SAXO_OS/linux/arch/arm/boot`, ejecutar:
 ```bash
 mkbootimg --kernel zImage --output boot.img
 ```
