@@ -56,7 +56,7 @@ sudo umount /dev/sdc*
 
 Luego con `lsblk` confirmo que la partición fue creada correctamente.
 
-![.](../revisionTipoParticion.png)
+![..](../Imagenes/revisionTipoParticion.png)
 
 Prosiguiendo, escribo este comando con el fin de formatear la partición:
 ```bash
