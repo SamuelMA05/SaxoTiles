@@ -1,6 +1,6 @@
 ## Ejecución de U-Boot
 
-Antes de compilar, es necesario configurar el archivo `t113s_saxo_defconfig`, ubicado en la carpeta `u-boot-patch-v2025.07`. Dentro de ese archivo se encuentra la línea `CONFIG_CONS_INDEX`, que define qué puerto UART se usará como consola. Por defecto viene en `4`, pero hay que ajustarla según el puerto que se esté utilizando. En este caso, siguiendo la configuración de la placa definida por el profesor Carlos Camargo, se usa el **UART0**, que corresponde al índice `1`:
+Antes de compilar, es necesario configurar el archivo `t113s_saxo_defconfig`, ubicado en la carpeta `u-boot-patch-v2025.07`. Dentro de ese archivo se encuentra la línea `CONFIG_CONS_INDEX`, que define qué puerto UART se usará como consola. Por defecto viene en `4`, pero hay que ajustarla según el puerto que se esté utilizando. En este caso, siguiendo la configuración de la placa definida por el profesor Camargo, se usa el **UART0**, que corresponde al índice `1`:
 ```
 CONFIG_CONS_INDEX=1
 ```
