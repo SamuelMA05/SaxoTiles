@@ -6,6 +6,7 @@ Ejecutar el siguiente comando en la terminal:
 ```bash
 ./build_kernel.sh
 ```
+![.](../Imagenes/buildkernel.png)
 
 ### Configuración del U-Boot
 
