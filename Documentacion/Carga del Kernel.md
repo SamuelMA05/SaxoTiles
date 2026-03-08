@@ -40,7 +40,7 @@ No es que nuestra zImage que teníamos originalmente de por sí no sirva, lo que
 Como se ve en la imagen, note que la microsd tiene esa dirección. Entonces vamos a pasarle la imagen de la siguiente forma (estando en la misma dirección anterior):
 
 ```
-cp boot.img /media/Su_Usuario/Nombre_de_la_Particion/
+cp zImage /media/Su_Usuario/Nombre_de_la_Particion/
 ```
 Nos falta es entonces el dts, este corresponde con el que está nuevamente en esa carpeta de boot. La dirección es boot/dts El comando es:
 
@@ -82,6 +82,10 @@ setenv boot_efi_bootmgr
 setenv boot_extlinux
 setenv mmc dev 0
 setenv mmc_boot_part 1
+setenv bootargs1 'earlyprintk=sunxi-uart,0x02500000 clk_ignore_unused'
+setenv bootargs2 'console=ttyS0,115200 loglevel=8 root=/dev/mmcblk0p5'
+setenv bootargs3 'init=/sbin/init partitions=ext4 cma=8M gpt=1'
+setenv bootargs ${bootargs1} ${bootargs2} ${bootargs3}
 setenv boot_mmc 'fatload mmc ${mmc_dev}:${mmc_boot_part} 45000000 ${kernel}; fatload mmc ${mmc_dev}:${mmc_boot_part} 40000000 ${dts}; bootz 45000000 - 40000000'
 saveenv
 ```
@@ -97,3 +101,47 @@ Y ahora corremos:
 ```
 run boot_mmc
 ```
+
+Debemos ir a la carpeta linux-patch-6.16.9 y modificar los archivos sun8i-t113s-saxo-gateway.dts y sunxi-d1s-t113s-saxo.dtsi
+
+En el primer archivo debemos de modificar:
+```
+chosen {
+		stdout-path = "serial0:115200n8";
+	};
+```
+Que por defecto está en 3.
+
+Adicionalmente agregamos
+
+```
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_pe2_pins>;
+	status = "okay";
+};
+```
+
+En el segundo archivo agregamos
+
+```
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_pe2_pins>;
+	status = "okay";
+};
+```
+
+Adicionalmente debemos de modificar el archivo sunxi-d1s-t113.dtsi que se encuentra en la dirección T113_SAXO_OS/linux/arch/riscv/boot/dts/allwinner(esto preguntarle al profe, porque se me hace muy raro que cambiando el riscv funcione)
+
+Agregamos 
+```
+			/omit-if-no-ref/
+			uart0_pe2_pins: uart0-pe2-pins {
+    			pins = "PE2", "PE3";
+   			 function = "uart0";
+			};
+```
+
+buildeamos el kernel, y copiamos los archivos y vamos al minicom y escribimos run boot_mmc y deberíamos de obtener algo así:
+
