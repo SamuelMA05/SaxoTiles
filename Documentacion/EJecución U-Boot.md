@@ -63,11 +63,6 @@ Luego con `lsblk` confirmo que la partición fue creada correctamente.
 ![..](../Imagenes/lsblk.png)
 
 Prosiguiendo, escribo este comando con el fin de formatear la partición:
-```bash
-sudo umount /dev/sdc*
-```
-Y se formatea la partición
-
 ```
 sudo mkfs.fat /dev/sdc1
 ```
