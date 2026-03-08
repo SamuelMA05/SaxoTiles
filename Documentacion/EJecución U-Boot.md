@@ -66,8 +66,11 @@ Prosiguiendo, escribo este comando con el fin de formatear la partición:
 ```bash
 sudo umount /dev/sdc*
 ```
-sudo mkfs.fat /dev/sdc1
+Y se formatea la partición
 
+```
+sudo mkfs.fat /dev/sdc1
+```
 
 ### Grabado del bootloader
 
