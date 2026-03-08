@@ -16,7 +16,7 @@ CONFIG_OF_CONTROL=y
 CONFIG_DEFAULT_DEVICE_TREE="sun8i-t113s-saxo"
 ```
 
-Una vez realizado este cambio, se debe reconstruir (rebuild) el U-Boot.
+Una vez realizado este cambio, se debe rebuildear el U-Boot.
 
 ---
 
