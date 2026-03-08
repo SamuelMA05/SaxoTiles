@@ -100,6 +100,7 @@ mkbootimg --kernel zImage --output boot.img
 ```bash
 cp zImage /media/<usuario>/<particion>/
 cp ./allwinner/sun8i-t113s-saxo-gateway.dtb /media/<usuario>/<particion>/
+sync
 ```
 
 ---
