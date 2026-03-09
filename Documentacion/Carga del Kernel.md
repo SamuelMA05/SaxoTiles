@@ -100,7 +100,15 @@ mkbootimg --kernel zImage --output boot.img
 #### Copia de archivos a la microSD
 ```bash
 cp zImage /media/<usuario>/<particion>/
+en nuestro caso
+cd ~/Escritorio/SaxoTiles/T113_SAXO_OS/linux/arch/arm/boot
+cp zImage /media/nicolas/089B-F6D6/
+
 cp ./allwinner/sun8i-t113s-saxo-gateway.dtb /media/<usuario>/<particion>/
+en nuestro caso
+cd ~/Escritorio/SaxoTiles/T113_SAXO_OS/linux/arch/arm/boot/dts$ 
+cp ./allwinner/sun8i-t113s-saxo-gateway.dtb /media/nicolas/089B-F6D6/
+
 sync
 ```
 La dirección de la sd se encuentra aqui (depende de su usuario y partición obviamente):
