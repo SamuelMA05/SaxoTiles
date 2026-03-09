@@ -95,7 +95,7 @@ Desde el directorio `T113_SAXO_OS/linux/arch/arm/boot`, ejecutar:
 mkbootimg --kernel zImage --output boot.img
 ```
 
-> La imagen `zImage` es funcional por sí sola, pero debe empaquetarse en el formato `boot.img` (estándar de arranque Android), que es el que Buildroot espera.
+> Esto sería bueno preguntárselo al profe, puesto que boot.img es formato tipo Android, como decía en el libro. Sin embargo, nosotros vamos a terminar usando es zImage, para bootz y después arrancar con run boot_mmc. DOnde zImage es un kernel ARM comprimido.
 
 #### Copia de archivos a la microSD
 ```bash
