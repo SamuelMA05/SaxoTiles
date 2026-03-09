@@ -95,7 +95,7 @@ Desde el directorio `T113_SAXO_OS/linux/arch/arm/boot`, ejecutar:
 mkbootimg --kernel zImage --output boot.img
 ```
 
-> Esto sería bueno preguntárselo al profe, puesto que boot.img es formato tipo Android, como decía en el libro. Sin embargo, nosotros vamos a terminar usando es zImage, para bootz y después arrancar con run boot_mmc. DOnde zImage es un kernel ARM comprimido.
+> Esto sería bueno preguntárselo al profe, puesto que boot.img es formato tipo Android, como decía en el libro. Sin embargo, nosotros vamos a terminar usando es zImage, para bootz y después arrancar con run boot_mmc. Donde zImage es un kernel de Linux comprimido para arquitectura ARM. Esa "z" quiere decir "zlib" que es el algoritmo de compresión de la imagen.
 
 #### Copia de archivos a la microSD
 ```bash
