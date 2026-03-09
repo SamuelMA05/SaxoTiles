@@ -1,7 +1,7 @@
 <p align="center">
-![.](../Imagenes/flujo.png)
-
+  <img src="../Imagenes/flujo.png" alt="flujo">
 </p>
+
 1) Se activa la Boot ROM al encender el chip. Esta tiene como función encontrar el SPL en la SD/EMMC.
 2) La SPL inicializa la RAM. Una vez lista la RAM, se carga el U-Boot. Cuando nos sale en el minicom algo como:
 ```
@@ -16,3 +16,5 @@ Eso fue gracias al comando
 sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdc bs=1k seek=16400
 ```
 Que tiene SPL y U-Boot empaquetados.
+
+3) La partición FAT que hicimos, es para almacenar la imagen de U-Boot + el bootloader
