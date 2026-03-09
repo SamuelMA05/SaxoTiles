@@ -33,12 +33,12 @@ Ahora, volviendo a la raíz del proyecto, se debe entrar al archivo build_u-boot
 git checkout -f
 ```
 
+![.](../Imagenes/build.sh.png)
+
+Ahora sí
 ```
 ./build_u-boot.sh
 ```
-
-![.](../Imagenes/build.sh.png)
-
 
 
 ### Preparación de la microSD
