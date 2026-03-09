@@ -36,6 +36,7 @@ git checkout -f
 ![.](../Imagenes/build.sh.png)
 
 Ahora sí
+
 ```
 ./build_u-boot.sh
 ```
