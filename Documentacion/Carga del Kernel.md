@@ -154,7 +154,7 @@ setenv boot_extlinux
 setenv mmc_dev 0
 setenv mmc_boot_part 1
 setenv bootargs1 'earlyprintk=sunxi-uart,0x02500000 clk_ignore_unused'
-setenv bootargs2 'console=ttyS0,115200 loglevel=8 root=/dev/mmcblk0p5'
+setenv bootargs2 'console=ttyS0,115200 loglevel=8 root=/dev/mmcblk0p2'
 setenv bootargs3 'init=/sbin/init partitions=ext4 cma=8M gpt=1'
 setenv bootargs ${bootargs1} ${bootargs2} ${bootargs3}
 setenv boot_mmc 'fatload mmc ${mmc_dev}:${mmc_boot_part} 45000000 ${kernel}; fatload mmc ${mmc_dev}:${mmc_boot_part} 40000000 ${dts}; bootz 45000000 - 40000000'
