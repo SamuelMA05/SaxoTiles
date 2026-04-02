@@ -80,7 +80,7 @@ sudo mkfs.fat /dev/sdc1
 
 Una vez lista la partición, grabo el bootloader directamente en la SD con:
 ```bash
-sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdc bs=1k seek=16400
+sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdc bs=1024 seek=8 conv=fsync
 ```
 Este comando se coloca en la dirección de u-boot
 
