@@ -27,6 +27,23 @@ el status por defecto es "okay", nosotros deberemos de colocar "disabled", y des
 };
 ```
 
+Debemos también ir al archivo llamado "sunxi-d1s-t113.dtsi" y buscar la línea
+```
+		uart0: serial@2500000 {
+			compatible = "snps,dw-apb-uart";
+			reg = <0x2500000 0x400>;
+			reg-io-width = <4>;
+			reg-shift = <2>;
+			interrupts = <SOC_PERIPHERAL_IRQ(2) IRQ_TYPE_LEVEL_HIGH>;
+			clocks = <&ccu CLK_BUS_UART0>;
+			resets = <&ccu RST_BUS_UART0>;
+			dmas = <&dma 14>, <&dma 14>;
+			dma-names = "tx", "rx";
+			status = "disabled";
+		};
+```
+Por defecto está en disabled, pero debemos de activar su status en "okay".
+
 Ahora, volviendo a la raíz del proyecto, se debe entrar al archivo build_u-boot.sh y eliminar la línea de 
 
 ```
