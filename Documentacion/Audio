@@ -1,1 +1,20 @@
+Respecto al chip el coder de audio cuenta con las siguientes caracteristicas.
+ Codec
+• Two audio digital-to-analog converter (DAC) channels
+- Supports 16-bit and 20-bit sample resolution
+- 8 kHz to 192 kHz DAC sample rate
+- 100 ± 2 dB SNR@A-weight, -85 ± 3 dB THD+N
+• One audio output:
+- One stereo headphone output: HPOUTL/R
+• Three audio analog-to-digital converter (ADC) channels
+- Supports 16-bit and 20-bit sample resolution
+- 8 kHz to 48 kHz ADC sample rate
+- 95 ± 3dB SNR@A-weight, -80 ± 3dB THD+N
+• Three audio inputs:
+- One differential microphone input: MICIN3P/3N, or one single-end microphone input: MICIN3P
+- One stereo LINEIN input: LINEINL/R
+- One stereo FMIN input: FMINL/R
+
+
+Los cuales en la pcb tiene la siguiente ubicacion.
 
