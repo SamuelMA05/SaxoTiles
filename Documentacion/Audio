@@ -18,7 +18,8 @@ Respecto al chip el coder de audio cuenta con las siguientes caracteristicas.
 
 Los cuales en la pcb tiene la siguiente ubicacion.
 
-![Audio PCB](../../Imagenes/Audio_pcb.png)
+![.](../Imagenes/Audio_pcb.png)
+
 
 En los pines las salidas de uadio corresponden a los pines   HPOUTL/R es decir los pines 99 y 98
 
