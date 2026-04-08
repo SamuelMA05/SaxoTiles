@@ -21,3 +21,15 @@ Los cuales en la pcb tiene la siguiente ubicacion.
 ![Audio PCB](../../Imagenes/Audio_pcb.png)
 
 En los pines las salidas de uadio corresponden a los pines   HPOUTL/R es decir los pines 99 y 98
+
+
+Teniendo en cuenta (agregar imagen de pines ya subida al github xd)
+Salida de audio en Allwinner T113-S3
+
+Según las especificaciones del pin:
+
+Los pines HPOUTL (pin 99) y HPOUTR (pin 98) son salidas analógicas estéreo para auriculares (canal izquierdo y derecho, respectivamente).
+Estas salidas no entregan potencia suficiente para mover parlantes directamente, ya que son señales de bajo nivel diseñadas para conectarse a auriculares o a la entrada de un amplificador externo.
+El pin HPVCC es la alimentación dedicada para la etapa de salida de auriculares, y debe conectarse a una fuente de voltaje limpia y estable en la placa (normalmente 3.3 V).
+Para conectar parlantes, es necesario usar un amplificador externo que reciba la señal analógica de HPOUTL/R y la amplifique a niveles adecuados para bocinas.
+Alternativamente, el T113-S3 ofrece interfaces digitales de audio (I2S/PCM) para conectar DACs y amplificadores digitales externos con potencia integrada.
