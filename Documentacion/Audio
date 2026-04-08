@@ -35,7 +35,6 @@ Para conectar parlantes, es necesario usar un amplificador externo que reciba la
 Alternativamente, el T113-S3 ofrece interfaces digitales de audio (I2S/PCM) para conectar DACs y amplificadores digitales externos con potencia integrada.
 
 
-Por otro lado revisando el esquema la parte de salida analogica esta alimentada por 1.8 v lo cual es insuficiente por lo que toca una etapa externa al chip para asi lograr reproducirlo en un parlante.
-
+Revisando a profundidad la placa se denota que tiene un circuito de amplificacion de audio interno (AGREGAR IMAGEN). donde tiene el integrado y cuenta con un PAM8301
 
 
