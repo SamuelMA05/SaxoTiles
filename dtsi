@@ -1,0 +1,67 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
+#include <dt-bindings/input/matrix-keymap.h>
+
+/ {
+keypad: keypad {
+		compatible = "gpio-matrix-keypad";
+        device_type = "keyboard";
+
+		debounce-delay-ms = <10>;
+		col-scan-delay-us = <100>;
+
+		row-gpios = <
+			&pio 3 16 GPIO_ACTIVE_LOW
+			&pio 3 14 GPIO_ACTIVE_LOW
+			&pio 3 13 GPIO_ACTIVE_LOW
+			&pio 3 10 GPIO_ACTIVE_LOW
+			&pio 3 21 GPIO_ACTIVE_LOW
+			&pio 3 6  GPIO_ACTIVE_LOW
+			&pio 3 4  GPIO_ACTIVE_LOW
+			&pio 3 2  GPIO_ACTIVE_LOW
+		>;
+
+		col-gpios = <
+			&pio 3 8  GPIO_ACTIVE_LOW
+			&pio 3 0  GPIO_ACTIVE_LOW
+			&pio 3 20 GPIO_ACTIVE_LOW
+		>;
+
+		linux,keymap = <
+			MATRIX_KEY(0,0,KEY_Z) MATRIX_KEY(1,0,KEY_X)
+			MATRIX_KEY(2,0,KEY_C) MATRIX_KEY(3,0,KEY_V)
+			MATRIX_KEY(4,0,KEY_B) MATRIX_KEY(5,0,KEY_N)
+			MATRIX_KEY(6,0,KEY_M) MATRIX_KEY(7,0,KEY_Q)
+
+			MATRIX_KEY(0,1,KEY_W) MATRIX_KEY(1,1,KEY_E)
+			MATRIX_KEY(2,1,KEY_R) MATRIX_KEY(3,1,KEY_AFFFGFG)
+			MATRIX_KEY(4,1,KEY_Y) MATRIX_KEY(5,1,KEY_U)
+			MATRIX_KEY(6,1,KEY_I) MATRIX_KEY(7,1,KEY_O)
+
+			MATRIX_KEY(0,2,KEY_A) MATRIX_KEY(1,2,KEY_S)
+			MATRIX_KEY(2,2,KEY_D) MATRIX_KEY(3,2,KEY_F)
+			MATRIX_KEY(4,2,KEY_G) MATRIX_KEY(5,2,KEY_H)
+			MATRIX_KEY(6,2,KEY_J) MATRIX_KEY(7,2,KEY_K)
+		>;
+
+		wakeup-source;
+		status = "okay";
+	};
+};
+
+&pio {
+	keypad_rows: keypad_rows {
+		pins = "PD16", "PD14", "PD13", "PD10",
+		       "PD21", "PD6", "PD4", "PD2";
+		function = "gpio_in";
+		bias-pull-up;
+	};
+
+	keypad_cols: keypad_cols {
+		pins = "PD8", "PD0", "PD20";
+		function = "gpio_out";
+		bias-disable;
+	};
+};
