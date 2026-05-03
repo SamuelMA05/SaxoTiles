@@ -71,7 +71,7 @@ sudo mount --bind /dev/pts /mnt/dev/pts
 sudo cp /usr/bin/qemu-arm-static /mnt/usr/bin/
 ```
 
-> 💡 El flag `exec,dev` es importante — sin él el debootstrap falla con error de permisos.
+> El flag `exec,dev` es importante — sin él el debootstrap falla con error de permisos.
 
 ### Entrar al entorno ARM
 
