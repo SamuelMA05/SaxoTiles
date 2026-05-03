@@ -1,4 +1,4 @@
-# Configuración de TWI3 (I2C) en Device Tree
+# Configuración del Sensor de Presión (I2C) en Device Tree
 ```bash
 cd linux-5.4-1.0.0/arch/arm/boot/dts
 ```
