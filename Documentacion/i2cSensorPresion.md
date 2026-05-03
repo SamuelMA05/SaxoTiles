@@ -28,17 +28,19 @@ twi3_pins_b: twi3@1 {
     allwinner,drive = <1>;
     allwinner,pull = <0>;
 };
+```
+### pins_a → activo
+### pins_b → deshabilitado
 
-# pins_a → activo
-# pins_b → deshabilitado
+Luego busco estos bloques:
+```bash
+rgb24_pins_a
+rgb24_pins_b
+```
+ y elimino "PB6" y "PB7" para evitar conflicto
 
-# Luego busco estos bloques:
-# rgb24_pins_a
-# rgb24_pins_b
-# y elimino "PB6" y "PB7" para evitar conflicto
-
-# Después busco el nodo twi3 y lo dejo así:
-
+Después busco el nodo twi3 y lo dejo así:
+```bash
 &twi3 {
     pinctrl-names = "default", "sleep";
     pinctrl-0 = <&twi3_pins_a>;
