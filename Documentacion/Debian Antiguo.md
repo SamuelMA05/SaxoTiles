@@ -23,7 +23,6 @@ Esto descarga e instala los paquetes base y genera la carpeta:
 debian_fs/debian_bookworm/
 ```
 
-> ⚠️ Este proceso puede tardar varios minutos dependiendo de la conexión a internet.
 
 ---
 
@@ -41,7 +40,7 @@ La SD debe tener dos particiones:
 
 ### Desmontar y formatear el ROOTFS
 
-> ⚠️ Reemplazar `/dev/sddX` con la partición correcta según `lsblk`
+>  Reemplazar `/dev/sddX` con la partición correcta según `lsblk`
 
 ```bash
 sudo umount /media/nicolas/ROOTFS
@@ -54,8 +53,6 @@ sudo mount /dev/sddX /mnt
 ```bash
 sudo rsync -a ~/Descargas/debian_fs/debian_bookworm/. /mnt/
 ```
-
-> ⚠️ Este proceso puede tardar varios minutos.
 
 ---
 
@@ -120,8 +117,6 @@ sudo umount /mnt/proc
 sudo sync
 sudo umount /mnt
 ```
-
-> 💡 El comando `sync` asegura que todos los datos se escriban en la SD antes de desmontar.
 
 ---
 
