@@ -1,0 +1,148 @@
+# Faust + JACK + PipeWire en All-Winner T113 (ARMv7)
+
+## Problema
+
+Al compilar con `faust2jackconsole -osc noise.dsp` dentro de un chroot ARM en un PC x86,
+el binario generado causaba `Illegal instruction` en el T113.
+
+### Causa raíz
+
+El script `/usr/share/faust/utils/faustoptflags` detecta la arquitectura con `uname -m`,
+pero dentro del chroot esto devuelve la arquitectura del **host x86**, no ARM:
+
+```bash  
+
+
+Aunque `file noise` diga `ELF 32-bit ARM`, las optimizaciones internas son x86,
+causando `Illegal instruction` al ejecutar en el T113.
+
+---
+
+## Entorno
+
+- **PC host**: x86_64, Debian
+- **Chroot**: `debian_bookworm` ARMv7 (`armhf`)
+- **Embebido**: All-Winner T113, ARMv7 (`armv7-a`, `neon`, `vfpv3`, `vfpv4`)
+- **Audio**: PipeWire + JACK (`pw-jack`)
+- **Faust**: 2.x con arquitectura `jack-console.cpp`
+
+---
+
+## Solución
+
+Compilar manualmente en dos pasos, forzando flags ARM explícitos en lugar de usar
+`faust2jackconsole` directamente.
+
+### Paso 1 — Entrar al chroot
+
+```bash
+
+# Faust + JACK + PipeWire en All-Winner T113 (ARMv7)
+
+## Problema
+
+Al compilar con `faust2jackconsole -osc noise.dsp` dentro de un chroot ARM en un PC x86,
+el binario generado causaba `Illegal instruction` en el T113.
+
+### Causa raíz
+
+El script `/usr/share/faust/utils/faustoptflags` detecta la arquitectura con `uname -m`,
+pero dentro del chroot esto devuelve la arquitectura del **host x86**, no ARM:
+
+```bash
+# faustoptflags entra al caso "Linux Intel" y usa:
+MYGCCFLAGS="-std=c++11 -Ofast -march=native"  # ← genera instrucciones x86
+```
+
+Aunque `file noise` diga `ELF 32-bit ARM`, las optimizaciones internas son x86,
+causando `Illegal instruction` al ejecutar en el T113.
+
+---
+
+## Entorno
+
+- **PC host**: x86_64, Debian
+- **Chroot**: `debian_bookworm` ARMv7 (`armhf`)
+- **Embebido**: All-Winner T113, ARMv7 (`armv7-a`, `neon`, `vfpv3`, `vfpv4`)
+- **Audio**: PipeWire + JACK (`pw-jack`)
+- **Faust**: 2.x con arquitectura `jack-console.cpp`
+
+---
+
+## Solución
+
+Compilar manualmente en dos pasos, forzando flags ARM explícitos en lugar de usar
+`faust2jackconsole` directamente.
+
+### Paso 1 — Entrar al chroot
+
+```bash
+sudo chroot ~/ruta/a/debian_bookworm/
+cd /tmp
+```
+
+### Paso 2 — Generar el C++ con Faust
+
+```bash
+faust -i -a /usr/share/faust/jack-console.cpp -osc noise.dsp -o noise.dsp.cpp
+```
+
+> El warning `unrecognized option(s): "-osc"` es normal, no afecta la generación del C++.
+> La flag `-DOSCCTRL` en el paso siguiente es la que habilita OSC en la compilación final.
+
+### Paso 3 — Compilar con flags ARM correctos
+
+```bash
+g++ noise.dsp.cpp \
+    -std=c++11 -O2 \
+    -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard \
+    -I/usr/local/include -L/usr/local/lib \
+    $(pkg-config --cflags --libs jack) \
+    $(pkg-config --cflags --libs alsa) \
+    -DOSCCTRL -lOSCFaust \
+    -lpthread -lm \
+    -o noise
+```
+
+### Paso 4 — Verificar el binario
+
+```bash
+file noise
+# noise: ELF 32-bit LSB pie executable, ARM, EABI5 version 1 (GNU/Linux)...
+```
+
+### Paso 5 — Copiar a la SD
+
+```bash
+exit  # salir del chroot
+
+sudo cp ~/ruta/a/debian_bookworm/tmp/noise \
+        /media/$USER/<uuid-particion-debian>/root/noise
+
+sudo chmod +x /media/$USER/<uuid-particion-debian>/root/noise
+```
+
+---
+
+## Ejecución en el T113
+
+### Arrancar PipeWire
+
+```bash
+pipewire &
+sleep 2
+wireplumber &
+sleep 1
+pipewire-pulse &
+sleep 1
+```
+
+> Los warnings de libcamera y BlueZ son normales si no están instalados.
+
+### Ejecutar noise
+
+```bash
+pw-jack ./noise -port 5513
+```
+
+Salida esperada:
