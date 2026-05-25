@@ -146,3 +146,35 @@ pw-jack ./noise -port 5513
 ```
 
 Salida esperada:
+ Compilar el archivo como: 
+
+faust -i -a /usr/share/faust/jack-console.cpp -osc noise.dsp -o noise.dsp.cpp
+
+g++ noise.dsp.cpp \
+    -std=c++11 -O2 \
+    -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard \
+    -I/usr/local/include -L/usr/local/lib \
+    $(pkg-config --cflags --libs jack) \
+    $(pkg-config --cflags --libs alsa) \
+    -DOSCCTRL -lOSCFaust \
+    -lpthread -lm \
+    -o noise
+
+
+
+COmandos dentro del embebido 
+pipewire &
+sleep 2
+wireplumber &
+sleep 1
+pipewire-pulse &
+sleep 1
+
+amixer -c 0 set "digital volume" 100%
+amixer -c 0 set "DAC volume" 100%
+amixer -c 0 set "Headphone" 50%
+amixer -c 0 set "Headphone volume" 50%
+
+pw-jack ./noise -port 5513 < /dev/null &
+sleep 3
+./set_level
