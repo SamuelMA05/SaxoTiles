@@ -1,0 +1,2 @@
+chrony 	 /etc/chrony/chrony.conf
+chrony 	 /etc/chrony/chrony.keys

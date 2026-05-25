@@ -1,0 +1,650 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: faust
+Upstream-Contact: IOhannes m zmölnig <umlaeute@debian.org>
+Source: https://faust.grame.fr/downloads/
+Files-Excluded:
+ .git*
+ .travis.yml
+ architecture/*-lib*.a
+ *.dll windows/*/lib*.lib
+ *.so *.a
+ */gradle-wrapper.jar
+ */CMakeCache.txt */CMakeFiles/*
+ tools/faust2flash_v0.1/Step_2_FlashBuilder_project/*
+ libraries/docs/js/*.min.js
+ debian/*
+
+Files: *
+Copyright: 2003-2022, GRAME, Centre National de Creation Musicale
+License: GPL-2+
+
+Files: architecture/alsa-console.cpp
+ architecture/alsa-gtk.cpp
+ architecture/alsa-qt.cpp
+ architecture/bench.cpp
+ architecture/ca-qt.cpp
+ architecture/faust/audio/audio.h
+ architecture/faust/audio/coreaudio-dsp.h
+ architecture/faust/dsp/dsp-adapter.h
+ architecture/faust/dsp/dsp.h
+ architecture/faust/audio/netjack-dsp.h
+ architecture/faust/audio/opensles-android-dsp.h
+ architecture/faust/audio/portaudio-dsp.h
+ architecture/faust/gui/console.h
+ architecture/ios-coreaudio-jack.cpp
+ architecture/ios-coreaudio.cpp
+ architecture/jack-console.cpp
+ architecture/jack-gtk.cpp
+ architecture/jack-qt.cpp
+ architecture/netjack-console.cpp
+ architecture/netjack-qt.cpp
+ architecture/oscio-gtk.cpp
+ architecture/oscio-qt.cpp
+ architecture/pa-gtk.cpp
+ architecture/pa-qt.cpp
+ architecture/ra-qt.cpp
+ architecture/ros-callbacks.cpp
+ architecture/unsupported-arch/windowsdll.cpp
+ architecture/faust/audio/alsa-dsp.h
+ architecture/faust/audio/android-dsp.h
+ architecture/faust/audio/coreaudio-ios-dsp.h
+ architecture/faust/audio/jack-dsp.h
+ architecture/faust/audio/rtaudio-dsp.h
+ architecture/faust/dsp/poly-dsp.h
+ architecture/faust/gui/MidiUI.h
+ architecture/faust/gui/meta.h
+ architecture/faust/midi/midi.h
+ architecture/faust/midi/rt-midi.h
+ architecture/faust/misc.h
+ architecture/unsupported-arch/iphone-cocoa.cpp
+ architecture/jack-gtk-ros.cpp
+ architecture/jack-internal.cpp
+ architecture/jack-ros.cpp
+ architecture/unsupported-arch/ms-jack-gtk.cpp
+ architecture/owl.cpp
+ architecture/plot.cpp
+ architecture/sndfile.cpp
+ architecture/ladspa.cpp
+Copyright: 2003-2022, GRAME, Centre National de Creation Musicale
+License: GPL-3+ with FAUST exception
+
+Files: architecture/faust/dsp/cpp-dsp-adapter.h
+ architecture/faust/dsp/dsp-multi.h
+ architecture/faust/dsp/dsp-multifun.h
+ architecture/faust/dsp/interpreter-*
+ architecture/faust/dsp/llvm-*
+ libraries/maths.lib
+ libraries/old/math.lib
+ libraries/maxmsp.lib
+ libraries/old/music.lib
+ libraries/reducemaps.lib
+Copyright: 2003-2020, GRAME, Centre National de Creation Musicale
+License: LGPL-2.1+ with FAUST exception
+
+Files: architecture/httpdlib/*
+ architecture/osclib/*
+ compiler/generator/dsp_aux.hh
+ compiler/generator/libfaust.h
+ compiler/transform/signal2Elementary.*
+Copyright: 2003-2021, GRAME, Centre National de Creation Musicale
+License: LGPL-2.1+
+
+Files: architecture/osclib/faust/src/osc/OSCStream.*
+ architecture/osclib/faust/src/lib/OSCFError.*
+Copyright: 2009-2010, GRAME, Centre National de Creation Musicale
+License: LGPL-2+
+
+Files: architecture/iOS/iOS/FICocoaUI.h
+ architecture/max-msp/max-msp.cpp
+ architecture/max-msp/max-msp64.cpp
+ architecture/unity/unityplugin.cpp
+Copyright: 2004-2021, GRAME, Centre National de Creation Musicale
+License: LGPL-3+ with FAUST exception
+
+Files: architecture/iOS/iOS/FIBargraph.*
+Copyright: 2003-2012, GRAME, Centre National de Creation Musicale
+License: Expat
+
+Files: architecture/csound.cpp
+Copyright: 2010-2019, V. Lazzarini and GRAME
+License: GPL-3+
+
+Files: architecture/CSharpFaust*
+Copyright: 2021, Mike Oliphant
+License: GPL-3+ with FAUST exception
+
+Files: tools/faust2pd/*
+Copyright: 2009-2014, Albert Graef
+License: GPL-3+
+
+Files: architecture/api/DspFaust.*
+ architecture/nodejs/*
+Copyright: 2014-2017, GRAME, Centre National de Creation Musicale
+  2016-2017, GRAME, Romain Michon, CCRMA - Stanford University
+License: GPL-3+ with FAUST exception
+
+Files: architecture/pure.*
+ architecture/puredata.cpp
+ architecture/unsupported-arch/q.cpp
+ tools/faust2pd/examples/basic/puredata.cpp
+ tools/faust2pd/examples/faust/puredata.cpp
+ tools/faust2pd/examples/seqdemo/puredata.cpp
+ tools/faust2pd/examples/synth/puredata.cpp
+Copyright: 2006-2011, Albert Graef <Dr.Graef@t-online.de>
+License: LGPL-2.1+
+
+Files: architecture/lv2*
+ architecture/faustvst*
+Copyright: 2009-2016, Albert Graef <Dr.Graef@t-online.de>
+License: LGPL-3+
+
+Files: architecture/au-effect.cpp
+ architecture/au-instrument.cpp
+ architecture/faust/au/AUUI.h
+ architecture/vst.cpp
+Copyright: Yan Michalevsy
+License: BSD-3-clause
+
+Files: tools/faust2flash_v0.1/*
+Copyright: Travis Skare
+License: GPL-3
+
+Files: architecture/octave.cpp
+ tools/faust2oct/octave.cpp
+Copyright: 2009, Bjoern Anton Erlach
+License: GPL-2+
+
+Files: examples/misc/guitarix.dsp
+Copyright: 2009-2010, Hermann Meyer, James Warden, Andreas Degert
+  2011, Pete Shorthose
+License: GPL-2+
+
+Files: architecture/supercollider.cpp
+ tools/faust2sc-1.0.0/faust2sc
+Copyright: 2005-2012, Stefan Kersten
+ 2003-2019, GRAME, Centre National de Creation Musicale
+License: GPL-3+
+
+Files: tools/scbuilder/scbuilder
+Copyright: tefan Kersten <sk AT k-hornz DOT de>
+License: GPL-2+
+
+Files: architecture/dssi.cpp
+Copyright: 2011, Michael J. Wilson
+License: GPL-3+
+
+Files: syntax-highlighting/faust.lang
+Copyright: 2005-2007, Emanuele Aina
+  2005-2007, Marco Barisione <barisione@gmail.com>
+License: LGPL-2+
+
+Files: compiler/parser/sourcefetcher.*
+Copyright: 2001-2004, Lyle Hanson
+License: LGPL-2+
+
+Files: architecture/matlabplot.cpp
+Copyright: 2007-2011, Julius O. Smith III
+License: LGPL-2.1+
+
+Files: architecture/unsupported-arch/alchemy-as.cpp
+Copyright: 2010-2011, Travis Skare
+License: GPL-3+
+
+Files: architecture/unsupported-arch/snd-rt-gtk.cpp
+Copyright: 2008-2011, Kjetil Matheussen <k.s.matheussen@notam02.no>
+License: LGPL-2.1+
+
+Files: architecture/android/app/src/main/java/com/triggertrap/seekarc/SeekArc.java
+ architecture/android/app/src/main/res/drawable/seek_arc_control_selector.xml
+ architecture/android/app/src/main/res/values/colors.xml
+Copyright: 2013, Triggertrap Ltd, Neil Davis
+License: Expat
+
+Files: architecture/faust/midi/RtMidi.cpp
+ architecture/faust/midi/RtMidi.h
+Copyright: 2003-2017, Gary P. Scavone
+License: STK-4.3
+
+Files: examples/ambisonics/*
+ libraries/hoa.lib
+Copyright: 2012-2013, Guillot, Paris, Colafrancesco, CICM labex art H2H, U. Paris 8
+License: Expat
+
+Files: syntax-highlighting/atom/language-faust/LICENSE.md
+Copyright: 2014, GitHub Inc
+ 2009, Rasmus Andersson
+License: Expat
+# TODO: clarify whether github is really the copyright-holder
+
+Files: architecture/webaudio/qrcode.js
+Copyright: 2009, Kazuhiko Arase
+License: Expat
+
+Files:
+ architecture/webaudio/webaudio-wasm-wrapper.js
+Copyright: 2002-2013, Chris Veness | www.movable-type.co.uk
+  2017-2018, GRAME
+License: Expat
+
+Files: architecture/osclib/oscpack/*
+Copyright: 2004-2005, Ross Bencina <rossb@audiomulch.com>
+License: STK-4.3
+
+Files: architecture/faust/gui/qrcodegen.*
+Copyright: Project Nayuki.
+License: Expat
+
+Files: architecture/sam/sam*
+Copyright: 2018, Analog Devices, Inc.
+License: GPL-2+ with FAUST exception
+
+Files: architecture/sam/fast*
+Copyright: 2011, Paul Mineiro
+License: BSD-3-clause
+
+Files: architecture/smartKeyboard/*
+Copyright: 2017, Romain Michon - CCRMA, Stanford Univeristy (USA) / GRAME, Lyon (France)
+License: Expat
+
+Files: debian/*
+Copyright: 2016-2022, IOhannes m zmölnig <zmoelnig@iem.at>
+License: GPL-2+
+
+Files: libraries/tonestacks.lib
+Copyright: Guitarix project (http://guitarix.sourceforge.net/)
+License: LGPL-2.1+
+
+Files: libraries/instruments.lib
+Copyright: Romain Michon
+License: STK-4.3
+
+Files: libraries/docs/search/lunr.js
+Copyright: 2019, Oliver Nightingale
+License: Expat
+
+Files:
+ architecture/api/android/jni/dsp_faust_interface.i
+ architecture/android/app/src/main/res/layout/main.xml
+Copyright: 2003-2015, GRAME, Centre National de Creation Musicale
+  2013-2015, Romain Michon (CCRMA)
+License: faust-sample
+
+Files:
+ tools/faust2appls/faust2api
+ tools/faust2appls/faust2android
+ tools/faust2appls/faust2esp32
+Copyright: 2003-2020, GRAME, Centre National de Creation Musicale
+  2013-2020, Romain Michon (CCRMA)
+License: GPL-2+
+
+Files: libraries/old/effect.lib
+ libraries/old/filter.lib
+ libraries/old/oscillator.lib
+Copyright: Julius O. Smith III
+License: STK-4.3
+
+Files: architecture/httpdlib/src/lib/deelx.h
+ architecture/osclib/faust/src/lib/deelx.h
+Copyright: 2006, RegExLab.com
+License: deelx
+  DEELX is free for personal use and commercial use.
+
+Files: examples/physicalModeling/faust-stk/*
+Copyright: Romain Michon (rmichon@ccrma.stanford.edu)
+ Julius O. Smith III
+License: STK-4.3
+
+Files: examples/misc/UITester.dsp
+Copyright: 2012, O. Guillerminet
+License: Expat
+
+Files: architecture/httpdlib/html/js/jquery-1.7.1.min.js
+ architecture/httpdlib/html/js/svg/jquery-1.7.1.min.js
+Copyright: 2010-2011, John Resig
+  2010, The Dojo Foundation
+License: Expat or GPL-2
+
+Files: tools/faust2pd/pd/m_pd.h
+Copyright: 1997-1999, Miller Puckette
+License: BSD-3-clause
+
+Files: tools/physicalModeling/mesh2faust/vega/*
+Copyright: 2013-2016, University of Southern California
+ 2007-2008, Carnegie Mellon University
+ 2009, MIT
+License: BSD-3-clause
+
+Files: tools/physicalModeling/mesh2faust/vega/libraries/glui/glui-2.35/*
+Copyright: 1998 Paul Rademacher
+License: LGPL-2.1+
+
+Files: embedded/faustremote/dns_avahi/*
+ embedded/faustremote/RemoteServer/linux_server/client-publish-service.*
+Copyright: Avahi Developers
+License: LGPL-2.1+
+
+Files: embedded/faustgen/src/maxcpp5.h
+Copyright: 2009, Graham Wakefield
+License: Expat
+
+Files: architecture/AU/*
+Copyright: 2012-2013, Apple Inc.
+License: apple
+
+Files: architecture/esp32/drivers/ac101/AC101.*
+Copyright: 2019, Ivo Pullens, Emmission
+License: GPL-3+
+
+Files: architecture/esp32/drivers/es8388/*
+Copyright: 2018, <ESPRESSIF SYSTEMS (SHANGHAI) PTE LTD>
+License: Expat
+
+Files: architecture/minimal-static.cpp
+Copyright: 2020, Jean Pierre Cimalando, GRAME, Centre National de Creation Musicale
+License: GPL-3+
+
+Files: compiler/generator/rn_base64.h
+Copyright: 2004-2008, René Nyffenegger
+License: base64
+
+
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License version2, as published
+ by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+Comment:
+ On Debian systems, the complete text of the GNU General Public License
+ (GPL) version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation; either version 2, or (at your option) any
+ later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+Comment:
+ On Debian systems, the complete text of the GNU General Public License
+ (GPL) version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 3, as
+ published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+Comment:
+ On Debian systems, the complete text of the GNU General Public License
+ (GPL) version 3 can be found in "/usr/share/common-licenses/GPL-3".
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+Comment:
+ On Debian systems, the complete text of the GNU General Public License
+ (GPL) version 3 can be found in "/usr/share/common-licenses/GPL-3".
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: GPL-3+ with FAUST exception
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ EXCEPTION : As a special exception, you may create a larger work
+ that contains this FAUST architecture section and distribute
+ that work under terms of your choice, so long as this FAUST
+ architecture section is not modified.
+Comment:
+ On Debian systems, the complete text of the GNU General Public License
+ (GPL) version 3 can be found in "/usr/share/common-licenses/GPL-3".
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: LGPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Library General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+Comment:
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/LGPL-2'.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+Comment:
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License (LGPL) version 2.1 can be found in
+ "/usr/share/common-licenses/LGPL-2.1".
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: LGPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+Comment:
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 3 can be found in the file `/usr/share/common-licenses/LGPL-3'.
+
+License: LGPL-3+ with FAUST exception
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ EXCEPTION : As a special exception, you may create a larger work
+ that contains this FAUST architecture section and distribute
+ that work under terms of your choice, so long as this FAUST
+ architecture section is not modified.
+Comment:
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 3 can be found in the file `/usr/share/common-licenses/LGPL-3'.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, is permitted provided that the following conditions are
+ met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. Neither the names of the copyright holders nor the names of its
+    contributors may be used to endorse or promote products derived from
+    this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+ CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files
+ (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge,
+ publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
+ ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: STK-4.3
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files
+ (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge,
+ publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ Any person wishing to distribute modifications to the Software is
+ requested to send the modifications to the original developer so that
+ they can be incorporated into the canonical version. This is, however,
+ not a binding provision of this license.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
+ ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: faust-sample
+ This is sample code. This file is provided as an example of minimal
+ FAUST architecture file. Redistribution and use in source and binary
+ forms, with or without modification, in part or in full are permitted.
+ In particular you can create a derived work of this FAUST architecture
+ and distribute that work under terms of your choice.
+ .
+ This sample code is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+License: apple
+ Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
+ Inc. ("Apple") in consideration of your agreement to the following
+ terms, and your use, installation, modification or redistribution of
+ this Apple software constitutes acceptance of these terms.  If you do
+ not agree with these terms, please do not use, install, modify or
+ redistribute this Apple software.
+ .
+ In consideration of your agreement to abide by the following terms, and
+ subject to these terms, Apple grants you a personal, non-exclusive
+ license, under Apple's copyrights in this original Apple software (the
+ "Apple Software"), to use, reproduce, modify and redistribute the Apple
+ Software, with or without modifications, in source and/or binary forms;
+ provided that if you redistribute the Apple Software in its entirety and
+ without modifications, you must retain this notice and the following
+ text and disclaimers in all such redistributions of the Apple Software.
+ Neither the name, trademarks, service marks or logos of Apple Inc. may
+ be used to endorse or promote products derived from the Apple Software
+ without specific prior written permission from Apple.  Except as
+ expressly stated in this notice, no other rights or licenses, express or
+ implied, are granted by Apple herein, including but not limited to any
+ patent rights that may be infringed by your derivative works or by other
+ works in which the Apple Software may be incorporated.
+ .
+ The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
+ MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+ THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
+ OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+ .
+ IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
+ OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
+ MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
+ AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
+ STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+License: base64
+ This source code is provided 'as-is', without any express or implied
+ warranty. In no event will the author be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this source code must not be misrepresented; you must not
+    claim that you wrote the original source code. If you use this source code
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ .
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original source code.
+ .
+ 3. This notice may not be removed or altered from any source distribution.

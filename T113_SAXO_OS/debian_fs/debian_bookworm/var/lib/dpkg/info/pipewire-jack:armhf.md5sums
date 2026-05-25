@@ -1,0 +1,8 @@
+3eaea35f2913ee40810787f2eea3ba31  usr/bin/pw-jack
+13e46fddfb56e83169d835ff88a8af55  usr/lib/arm-linux-gnueabihf/pipewire-0.3/jack/libjack.so.0.365.0
+e74a5373397cfc7ff31ca360ef61087d  usr/lib/arm-linux-gnueabihf/pipewire-0.3/jack/libjacknet.so.0.365.0
+8c633ad8088e656198336bf7283310f2  usr/lib/arm-linux-gnueabihf/pipewire-0.3/jack/libjackserver.so.0.365.0
+412470468f393ca447f266b151956f00  usr/share/doc/pipewire-jack/changelog.Debian.gz
+664b40d25bdb0d6e4f58fde3af0e58e3  usr/share/doc/pipewire-jack/copyright
+e067a41889149b31fd7bc46539bcf29e  usr/share/doc/pipewire/examples/ld.so.conf.d/pipewire-jack-arm-linux-gnueabihf.conf
+5daa9e63622ec4855efb424477733d56  usr/share/man/man1/pw-jack.1.gz

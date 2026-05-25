@@ -1,0 +1,5 @@
+08dff7fb49bd5d8bbf5a3a87979cfc8e  usr/lib/arm-linux-gnueabihf/libutempter.so.1.2.1
+a63924ba33cbf87b004d08d1c6ded936  usr/lib/arm-linux-gnueabihf/utempter/utempter
+74aea840c9e9a9cacec57f689b2b41ea  usr/share/doc/libutempter0/changelog.Debian.gz
+747b988746bdcaf070d949ee7c558321  usr/share/doc/libutempter0/copyright
+1f8e40693a90a4694893b4a784284b02  usr/share/lintian/overrides/libutempter0

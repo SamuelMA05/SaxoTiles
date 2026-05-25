@@ -1,0 +1,17 @@
+2375b12bf9f3cdb295bcdaf061a5a638  usr/lib/arm-linux-gnueabihf/spa-0.2/aec/libspa-aec-null.so
+11f3ba82b44e80e5e3c350b4e3d9ebe5  usr/lib/arm-linux-gnueabihf/spa-0.2/aec/libspa-aec-webrtc.so
+a92f3f567056ab30c21aa1708e90e8c0  usr/lib/arm-linux-gnueabihf/spa-0.2/alsa/libspa-alsa.so
+1272c1f216ef2d268aae86184772fa44  usr/lib/arm-linux-gnueabihf/spa-0.2/audioconvert/libspa-audioconvert.so
+f999b8484cfc14f2cfbd8e86f96e81ca  usr/lib/arm-linux-gnueabihf/spa-0.2/audiomixer/libspa-audiomixer.so
+37ee6d6edb72d39ca61d29769b2cdca7  usr/lib/arm-linux-gnueabihf/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
+e253b7e5e2c7969a24c25db83bfc30ba  usr/lib/arm-linux-gnueabihf/spa-0.2/avb/libspa-avb.so
+6b93f84d0642ed9dd3fd29b7adbd95e1  usr/lib/arm-linux-gnueabihf/spa-0.2/control/libspa-control.so
+e06fe42d607c3c043c03c593862086ae  usr/lib/arm-linux-gnueabihf/spa-0.2/support/libspa-dbus.so
+d195ec695b23c6bcbd86a6866229e318  usr/lib/arm-linux-gnueabihf/spa-0.2/support/libspa-journal.so
+4ce07325be0b8693fa8cc683e6072092  usr/lib/arm-linux-gnueabihf/spa-0.2/support/libspa-support.so
+23382e568bfb793b82adc02864a44a9e  usr/lib/arm-linux-gnueabihf/spa-0.2/test/libspa-test.so
+8367db70119856b9587c1c7c9d08c8b6  usr/lib/arm-linux-gnueabihf/spa-0.2/v4l2/libspa-v4l2.so
+c22b2e9ff4c5d829b9665710ca5a722e  usr/lib/arm-linux-gnueabihf/spa-0.2/videoconvert/libspa-videoconvert.so
+69438008fcef5703bf53a089c1fb1931  usr/lib/arm-linux-gnueabihf/spa-0.2/videotestsrc/libspa-videotestsrc.so
+85553379a3bf6d6a2a8fb90cb7c7d1ba  usr/share/doc/libspa-0.2-modules/changelog.Debian.gz
+664b40d25bdb0d6e4f58fde3af0e58e3  usr/share/doc/libspa-0.2-modules/copyright

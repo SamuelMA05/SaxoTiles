@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libLLVM-14.so.1
+/usr/share
+/usr/share/doc
+/usr/share/doc/libllvm14
+/usr/share/doc/libllvm14/NEWS.Debian.gz
+/usr/share/doc/libllvm14/changelog.Debian.gz
+/usr/share/doc/libllvm14/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libllvm14
+/usr/lib/arm-linux-gnueabihf/libLLVM-14.so

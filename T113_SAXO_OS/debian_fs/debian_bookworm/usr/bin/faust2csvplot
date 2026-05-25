@@ -1,0 +1,94 @@
+#! /bin/bash -e
+
+#####################################################################
+#                                                                   #
+#               Compiles Faust programs to plotters                 #
+#               (c) Grame, 2019-2021                                #
+#                                                                   #
+#####################################################################
+
+. /usr/share/faust/utils/faustpath
+. /usr/share/faust/utils/faustoptflags
+. /usr/share/faust/utils/usage.sh
+
+CXXFLAGS+=" $MYGCCFLAGS"  # So that additional CXXFLAGS can be used
+
+ARCHFILE=$FAUSTARCH/csvplot.cpp
+FAUSTFLOAT=float
+SOUNDFILELIBS=""
+
+echoHelp() {
+    usage faust2csvplot "[options] [Faust options] <file.dsp>"
+    echo "Compiles Faust programs to plotters, the following 4 options are given at runtime:"
+    options -dyn
+    option "-s <n>" "start at the sample number <n> (default is 0)"
+    option "-n <n>" "render <n> samples (default is 16)"
+    option "-r <rate>" "change the sample rate (default is 44100 Hz)"
+    option "-bs <buffer>" "change the buffer size (default is 512 frames)"
+    option
+    option -arch32 "generates a 32 bit architecture."
+    option -arch64 "generates a 64 bit architecture."
+    option -double "generates code with samples of type 'double'."
+    option -soundfile
+    option "Faust options"
+    exit
+}
+
+if [ "$#" -eq 0 ]; then
+    echo 'Please, provide a Faust file to process !'
+    echo ''
+    echoHelp
+fi
+
+#-------------------------------------------------------------------
+# Analyze command arguments :
+# faust options                 -> OPTIONS
+# if -omp : -openmp or -fopenmp -> OPENMP
+# existing *.dsp files          -> FILES
+#
+
+# dispatch command arguments
+for p in $@; do
+
+    if [ $p = "-help" ] || [ $p = "-h" ]; then
+        echoHelp
+    elif [ $p = "-arch32" ]; then
+        PROCARCH="-m32 -L/usr/lib32"
+    elif [ $p = "-arch64" ]; then
+        PROCARCH="-m64"
+    elif [ $p = "-double" ]; then
+        OPTIONS="$OPTIONS $p"
+        FAUSTFLOAT="double"
+    elif [ $p = "-soundfile" ]; then
+        CXXFLAGS="$CXXFLAGS -DSOUNDFILE"
+        SOUNDFILELIBS=`pkg-config --cflags --static --libs sndfile`
+    elif [ $p = "-dyn" ]; then
+        OPTIONS="$OPTIONS -inj template-llvm.cpp"
+        LLVM_LIBS="$STRIP $FAUSTLDDIR/libfaust.a `llvm-config --ldflags --libs all --system-libs`"
+    elif [ ${p:0:1} = "-" ]; then
+        OPTIONS="$OPTIONS $p"
+    elif [[ -f "$p" ]] && [ ${p: -4} == ".dsp" ]; then
+        FILES="$FILES $p"
+    else
+        OPTIONS="$OPTIONS $p"
+    fi
+done
+
+#-------------------------------------------------------------------
+# compile the *.dsp files
+
+for f in $FILES; do
+
+    # compile Faust to c++
+    faust -i -a $ARCHFILE $OPTIONS "$f" -o "$f.cpp" || exit
+
+    # compile c++ to binary
+    (
+        $CXX $CXXFLAGS "$f.cpp" $PROCARCH $LLVM_LIBS $SOUNDFILELIBS $OMP -DFAUSTFLOAT=$FAUSTFLOAT -o "${f%.dsp}"
+    ) > /dev/null || exit
+    rm "$f.cpp"
+
+    # collect binary file name for FaustWorks
+    BINARIES="$BINARIES${f%.dsp};"
+done
+echo $BINARIES

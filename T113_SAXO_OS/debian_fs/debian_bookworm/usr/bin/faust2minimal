@@ -1,0 +1,94 @@
+#! /bin/bash -e
+
+#####################################################################
+#                                                                   #
+#               A minimal faust2minimal  template                   #
+#               (c) Grame, 2021                                     #
+#                                                                   #
+#####################################################################
+
+# Define some common paths
+. /usr/share/faust/utils/faustpath
+
+# Define compilation flags
+. /usr/share/faust/utils/faustoptflags
+
+# Helper file to build the 'help' option
+. /usr/share/faust/utils/usage.sh
+
+CXXFLAGS+=" $MYGCCFLAGS"  # So that additional CXXFLAGS can be used
+LIBADD+=" -lpthread"
+
+# The architecture file name
+ARCHFILE=$FAUSTARCH/minimal.cpp
+
+# Global variables
+OPTIONS=""
+FILES=""
+
+echoHelp()
+{
+    usage faust2minimal "[options] [Faust options] <file.dsp>"
+    echo "Compiles Faust programs to a minimal executable"
+    option "Faust options"
+    exit
+}
+
+if [ "$#" -eq 0 ]; then
+    echo 'Please, provide a Faust file to process !'
+    echo ''
+    echoHelp
+fi
+
+#-------------------------------------------------------------------
+# dispatch command arguments
+#-------------------------------------------------------------------
+
+while [ $1 ]
+do
+    p=$1
+
+    if [ $p = "-help" ] || [ $p = "-h" ]; then
+        echoHelp
+    fi
+
+    echo "dispatch command arguments"
+
+    if [ ${p:0:1} = "-" ]; then
+        OPTIONS="$OPTIONS $p"
+    elif [[ -f "$p" ]] && [ ${p: -4} == ".dsp" ]; then
+        FILES="$FILES $p"
+    else
+        OPTIONS="$OPTIONS $p"
+    fi
+
+shift
+
+done
+
+#-------------------------------------------------------------------
+# compile the *.dsp files
+#-------------------------------------------------------------------
+
+for f in $FILES; do
+
+    # compile the DSP to c++ using the architecture file
+    echo "compile the DSP to c++ using the architecture file"
+    faust -i -a $ARCHFILE $OPTIONS "$f" -o "${f%.dsp}.cpp"|| exit
+
+    # compile c++ to binary
+    echo "compile c++ to binary"
+    (
+        $CXX $CXXFLAGS "${f%.dsp}.cpp" -o "${f%.dsp}" ${LIBADD}
+    ) > /dev/null || exit
+
+    # remove temporary files
+    rm -f "${f%.dsp}.cpp"
+
+    # collect binary file name for FaustWorks
+    BINARIES="$BINARIES${f%.dsp};"
+done
+
+echo $BINARIES
+
+

@@ -1,0 +1,6 @@
+d2b81dbf53fbd945f314c96b4c8504fc  usr/lib/systemd/user/pipewire-pulse.service
+b660d51bdce25da1e205c701fef52d65  usr/lib/systemd/user/pipewire-pulse.socket
+2f2040167a9998fb11345e876c85a156  usr/share/doc/pipewire-pulse/changelog.Debian.gz
+664b40d25bdb0d6e4f58fde3af0e58e3  usr/share/doc/pipewire-pulse/copyright
+2d30d60ceb284121a4899d2b40cb718f  usr/share/man/man1/pipewire-pulse.1.gz
+8772a9832e0530990d190d471881d414  usr/share/pipewire/pipewire-pulse.conf

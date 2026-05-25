@@ -1,0 +1,6 @@
+a8c32cf9081d478ff89b5fec3320982e  usr/lib/arm-linux-gnueabihf/systemd/libsystemd-core-252.so
+6d27cabc2f5196973cb57479c2872661  usr/lib/arm-linux-gnueabihf/systemd/libsystemd-shared-252.so
+6eb135b4151ac6d07c1600ef3beafcd4  usr/share/doc/libsystemd-shared/NEWS.Debian.gz
+be6875c87d02086b403aea2a611846ab  usr/share/doc/libsystemd-shared/changelog.Debian.gz
+b16a86fb841b001b52a5c5caccf526c2  usr/share/doc/libsystemd-shared/copyright
+c9a3d70ca723577ab38bea04769037ac  usr/share/lintian/overrides/libsystemd-shared

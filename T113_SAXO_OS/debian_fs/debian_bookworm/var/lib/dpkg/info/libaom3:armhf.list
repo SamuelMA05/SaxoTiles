@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libaom.so.3.6.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libaom3
+/usr/share/doc/libaom3/changelog.Debian.gz
+/usr/share/doc/libaom3/changelog.gz
+/usr/share/doc/libaom3/copyright
+/usr/lib/arm-linux-gnueabihf/libaom.so.3

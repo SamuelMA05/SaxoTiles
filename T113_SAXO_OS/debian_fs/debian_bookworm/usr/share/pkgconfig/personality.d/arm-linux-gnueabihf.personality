@@ -1,0 +1,4 @@
+Triplet: arm-linux-gnueabihf
+DefaultSearchPaths: /usr/local/lib/arm-linux-gnueabihf/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/arm-linux-gnueabihf/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
+SystemIncludePaths: /usr/include
+SystemLibraryPaths: /lib:/lib/arm-linux-gnueabihf:/usr/lib:/usr/lib/arm-linux-gnueabihf

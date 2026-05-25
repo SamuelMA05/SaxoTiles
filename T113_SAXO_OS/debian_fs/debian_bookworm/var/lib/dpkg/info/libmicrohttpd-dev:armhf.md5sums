@@ -1,0 +1,10 @@
+d847d9130570de8278466ccba6f8d49e  usr/include/microhttpd.h
+a2843cf466c235fbd9676354cc70d8a3  usr/lib/arm-linux-gnueabihf/libmicrohttpd.a
+0aa272afab536080b4f3d02f81b54465  usr/lib/arm-linux-gnueabihf/pkgconfig/libmicrohttpd.pc
+6ffcbfcd2b4f88d87a30ffc0d40daff2  usr/share/doc/libmicrohttpd-dev/changelog.Debian.gz
+21ea430b8f4a4f5f49c239bcc3cd398e  usr/share/doc/libmicrohttpd-dev/changelog.gz
+10593763797ed4911befe7a6ee330c93  usr/share/doc/libmicrohttpd-dev/copyright
+2e76fbbe04ff7c9eae333d41e5ed2450  usr/share/info/libmicrohttpd-tutorial.info.gz
+def1438aaed26de9543ff238872342b2  usr/share/info/libmicrohttpd.info.gz
+d6bba670dd762cd2109f99a5e3e66e01  usr/share/info/libmicrohttpd_performance_data.png
+ef20bee55ef08979a39590ed722c0841  usr/share/man/man3/libmicrohttpd.3.gz

@@ -1,0 +1,3 @@
+chrony 	 /etc/chrony/chrony.conf
+chrony 	 /etc/chrony/chrony.keys
+openssh-server 	 /etc/ssh/sshd_config

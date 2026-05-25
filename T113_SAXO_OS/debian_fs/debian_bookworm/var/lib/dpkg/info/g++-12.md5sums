@@ -1,0 +1,6 @@
+b38681ab0ca15a988c6a50489102c66f  usr/bin/arm-linux-gnueabihf-g++-12
+068a8ded5099c3fa3042f6a4a529e86a  usr/lib/gcc/arm-linux-gnueabihf/12/cc1plus
+345cd4723d1e40084d5f2a6481f48297  usr/lib/gcc/arm-linux-gnueabihf/12/g++-mapper-server
+d34e924e0b649f39a4c876c1a4ec4e1f  usr/share/doc/gcc-12-base/C++/README.C++
+db82fbda11ff1b3fdbc7fe142caefa02  usr/share/doc/gcc-12-base/C++/changelog.gz
+4291dd1a5b6a016df80a70e823b6bbb4  usr/share/lintian/overrides/g++-12

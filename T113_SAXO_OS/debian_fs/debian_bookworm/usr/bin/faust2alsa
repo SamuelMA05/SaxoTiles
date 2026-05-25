@@ -1,0 +1,98 @@
+#! /bin/bash -e
+
+#####################################################################
+#                                                                   #
+#               Compiles Faust programs to alsa-gtk                 #
+#               (c) Grame, 2009-2019                                #
+#                                                                   #
+#####################################################################
+
+. /usr/share/faust/utils/faustpath
+. /usr/share/faust/utils/faustoptflags
+. /usr/share/faust/utils/usage.sh
+
+CXXFLAGS+=" $MYGCCFLAGS"  # So that additional CXXFLAGS can be used
+
+ARCHFILE=$FAUSTARCH/alsa-gtk.cpp
+OSCDEFS=""
+
+if [[ $(uname -s) != Darwin ]]; then
+    LFLAGS+="-no-pie"
+fi
+
+echoHelp() 
+{
+    usage faust2alsa "[options] [Faust options] <file.dsp>"
+    platform Linux
+    require Alsa
+    echo "Compiles Faust programs to ALSA and GTK"
+    option
+    options -httpd -osc -midi -qrcode -poly
+    option "Faust options"
+    exit
+}
+
+if [ "$#" -eq 0 ]; then
+    echo 'Please, provide a Faust file to process !'
+    echo ''
+    echoHelp
+fi
+
+#-------------------------------------------------------------------
+# Analyze command arguments :
+# faust options                 -> OPTIONS
+# if -omp : -openmp or -fopenmp -> OPENMP
+# existing *.dsp files          -> FILES
+#
+
+# dispatch command arguments
+for p in $@; do
+    if [ $p = "-help" ] || [ $p = "-h" ]; then
+        echoHelp
+    fi
+
+    if [ $p = "-poly" ]; then
+        POLYDEFS="-DPOLY"
+    elif [ $p = "-midi" ]; then
+        MIDIDEFS="-DMIDICTRL"
+    elif [ $p = "-osc" ]; then
+        OSCDEFS="-DOSCCTRL -lOSCFaust"
+        YPATH="-L/usr/local/lib"
+    elif [ $p = "-httpd" ]; then
+        HTTPDEFS="-DHTTPCTRL -lHTTPDFaust"
+        HTTPLIBS=`pkg-config --cflags --libs libmicrohttpd`
+        YPATH="-L/usr/local/lib"
+    elif [ $p = "-arch32" ]; then
+        PROCARCH="-m32 -L/usr/lib32"
+    elif [ $p = "-arch64" ]; then
+        PROCARCH="-m64"
+    elif [ ${p:0:1} = "-" ]; then
+        OPTIONS="$OPTIONS $p"
+    elif [[ -f "$p" ]] && [ ${p: -4} == ".dsp" ]; then
+        FILES="$FILES $p"
+    else
+        OPTIONS="$OPTIONS $p"
+    fi
+done
+
+#-------------------------------------------------------------------
+# compile the *.dsp files using ALSA and GTK on linux
+#
+for f in $FILES; do
+
+    # compile faust to c++
+    faust -i -a $ARCHFILE $OPTIONS "$f" -o "$f.cpp" || exit
+
+    # compile c++ to binary
+    (
+        $CXX $CXXFLAGS $FAUSTTOOLSFLAGS $OMP "$f.cpp" `pkg-config --cflags --libs alsa gtk+-2.0` $PROCARCH $YPATH $OSCDEFS $HTTPDEFS $HTTPLIBS $POLYDEFS $MIDIDEFS $LFLAGS -o "${f%.dsp}"
+    )> /dev/null  || exit
+    rm "$f.cpp"
+
+    # collect binary file name for FaustWorks
+    BINARIES="$BINARIES${f%.dsp};"
+done
+
+echo $BINARIES
+
+

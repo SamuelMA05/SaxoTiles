@@ -1,0 +1,18 @@
+Document: fim-documentation
+Title: Tutorial & Miscellaneous documentation for Fim
+Author: Michele Martone
+Abstract: Fim stands for Fbi IMproved. Fbi is a framebuffer based
+ image viewer, made by Gerd Knorr, and Fim is primarily an interface
+ rework applied roughly as a patch to it, and is its main purpose is
+ to boost the features present in Fbi and to add new ones, to achieve
+ configurability and use flexibility, as well as usage speed. This
+ document provide miscellaneous documentation and a tutorial for Fim.
+Section: Viewers
+
+Format: HTML
+Index: /usr/share/doc/fim/FIM.html
+Files: /usr/share/doc/fim/FIM.html
+
+Format: Text
+Index: /usr/share/doc/fim/FIM.TXT.gz
+Files: /usr/share/doc/fim/FIM.TXT.gz

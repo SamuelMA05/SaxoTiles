@@ -1,0 +1,3 @@
+root _chrony 640 /etc/chrony/chrony.keys
+_chrony _chrony 750 /var/lib/chrony
+_chrony _chrony 750 /var/log/chrony

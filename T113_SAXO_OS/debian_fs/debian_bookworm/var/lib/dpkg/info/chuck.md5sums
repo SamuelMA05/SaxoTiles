@@ -1,0 +1,10 @@
+ceaa14c243ecf89d0ac06164f6707e7a  usr/bin/chuck
+41423d1a2d8d7b32a08bddf252694d05  usr/bin/chuck.alsa
+ebb46e9041cb4fbd54092d2cdb06b8f3  usr/bin/chuck.pulse
+8ca7b7b194b6d1f1f00b343c381536d0  usr/share/doc/chuck/README
+ad5401a267a924cd3529a2a39508bb66  usr/share/doc/chuck/THANKS
+0702c18299cce13eb0f3821e478c18a8  usr/share/doc/chuck/TODO
+e368f20c7ba5f16737f8d6d20eabf120  usr/share/doc/chuck/changelog.Debian.gz
+af7d7829ffd2efbd7c53082cdaf411d9  usr/share/doc/chuck/changelog.gz
+068aa2126a328b8544a71312cb412497  usr/share/doc/chuck/copyright
+513c615f7894f2b2c6fcf7042d1a6393  usr/share/man/man1/chuck.1.gz

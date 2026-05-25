@@ -1,0 +1,108 @@
+Package: libmagic-mgc
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libmagic1
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpolkit-agent-1-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libserd-0-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-user-session
+Architecture: armhf
+Auto-Installed: 1
+
+Package: polkitd
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpipewire-0.3-common
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpam-systemd
+Architecture: armhf
+Auto-Installed: 1
+
+Package: sgml-base
+Architecture: armhf
+Auto-Installed: 1
+
+Package: pipewire-pulse
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-daemon
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-bin
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpolkit-gobject-1-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: pipewire-bin
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-session-bus-common
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libsord-0-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libspa-0.2-modules
+Architecture: armhf
+Auto-Installed: 1
+
+Package: rtkit
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libduktape207
+Architecture: armhf
+Auto-Installed: 1
+
+Package: xml-core
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpipewire-0.3-modules
+Architecture: armhf
+Auto-Installed: 1
+
+Package: wireplumber
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-system-bus-common
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libwireplumber-0.4-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpipewire-0.3-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libsratom-0-0
+Architecture: armhf
+Auto-Installed: 1
+

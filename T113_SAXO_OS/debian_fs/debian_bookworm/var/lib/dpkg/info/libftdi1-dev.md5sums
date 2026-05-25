@@ -1,0 +1,12 @@
+353bbcddaadb4202811e939bffaafd80  usr/bin/libftdi1-config
+28e4d3e1176e0eb624105467a894b428  usr/include/libftdi1/ftdi.h
+d5dc526053ef384c5008d054d8167a68  usr/lib/arm-linux-gnueabihf/cmake/libftdi1/LibFTDI1Config.cmake
+9dc8d639838626e22e711ac3540921a2  usr/lib/arm-linux-gnueabihf/cmake/libftdi1/LibFTDI1ConfigVersion.cmake
+109578f4ce5ebf91635e71df3e9bbea9  usr/lib/arm-linux-gnueabihf/cmake/libftdi1/UseLibFTDI1.cmake
+910f9f7a42290d339af0699162f0d4ab  usr/lib/arm-linux-gnueabihf/libftdi1.a
+4ee1c1e642c1c0033c1784e4978ef02b  usr/lib/arm-linux-gnueabihf/pkgconfig/libftdi1.pc
+f70bbdbf5c5caf9a59d738525914af02  usr/share/doc/libftdi1-dev/changelog.Debian.armhf.gz
+f830b949e4960a64e9891a812b9174f7  usr/share/doc/libftdi1-dev/changelog.Debian.gz
+acb4cd9fed573265705c29d5e4085c06  usr/share/doc/libftdi1-dev/changelog.gz
+c60ae5de2a7cc7081279f7401d238145  usr/share/doc/libftdi1-dev/copyright
+73eb4414885a1f28c9a5e28bf4611d12  usr/share/man/man1/libftdi1-config.1.gz

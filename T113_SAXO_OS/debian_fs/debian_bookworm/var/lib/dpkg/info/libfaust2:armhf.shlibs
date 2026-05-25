@@ -1,0 +1,4 @@
+libHTTPDFaust 0 libfaust2 (>= 2.54.9+ds0)
+libOSCFaust 1 libfaust2 (>= 2.54.9+ds0)
+libfaust 2 libfaust2 (>= 2.54.9+ds0)
+libfaustmachine 0 libfaust2 (>= 2.54.9+ds0)

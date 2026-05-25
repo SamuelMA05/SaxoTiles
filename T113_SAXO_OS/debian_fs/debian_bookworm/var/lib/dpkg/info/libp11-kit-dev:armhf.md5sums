@@ -1,0 +1,12 @@
+7e2b1d64c33d02939fd368fac53c2220  usr/include/p11-kit-1/p11-kit/deprecated.h
+3a54681ffcaddbb9741ddb7ae09cc6e3  usr/include/p11-kit-1/p11-kit/iter.h
+22e2c65151d0d8f0d3ce623f630d859d  usr/include/p11-kit-1/p11-kit/p11-kit.h
+d7a93e61cfa05e9a8081d0826b12b0d4  usr/include/p11-kit-1/p11-kit/pin.h
+183259bb0bb20388df5b72c6ada2bcac  usr/include/p11-kit-1/p11-kit/pkcs11.h
+0416e02669a62ba0f7c3551321a31d2d  usr/include/p11-kit-1/p11-kit/pkcs11x.h
+d0b4678e7f111b3804b04043fbaf1135  usr/include/p11-kit-1/p11-kit/remote.h
+578e768210eb055571206259643d320c  usr/include/p11-kit-1/p11-kit/uri.h
+05919da7502a29c71317c8225c60be2c  usr/lib/arm-linux-gnueabihf/pkgconfig/p11-kit-1.pc
+49a71adda3aba07ac9ce7649d1305d2a  usr/share/doc/libp11-kit-dev/changelog.Debian.gz
+2ea3388613833d874566f1e47e93bd41  usr/share/doc/libp11-kit-dev/changelog.gz
+02ed16b57a85f6cb629707ff7d39caa0  usr/share/doc/libp11-kit-dev/copyright

@@ -1,0 +1,5 @@
+16af83e19f623a50381dacf4ed798ac7  usr/lib/arm-linux-gnueabihf/libavcodec.so.59.37.100
+ba5e085b4cb95d02176956eb15fd6e0b  usr/share/doc/libavcodec59/changelog.Debian.gz
+fe408d2520819e87b6c5d70420bf6177  usr/share/doc/libavcodec59/changelog.gz
+f256357dc30de7d3d96f1e60364f311e  usr/share/doc/libavcodec59/copyright
+6243717f2b717e5815fa161c77e9e5e7  usr/share/lintian/overrides/libavcodec59

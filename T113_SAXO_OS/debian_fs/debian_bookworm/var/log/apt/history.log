@@ -1,0 +1,10 @@
+
+Start-Date: 2026-05-22  15:37:01
+Commandline: apt install file
+Install: libmagic-mgc:armhf (1:5.44-3, automatic), libmagic1:armhf (1:5.44-3, automatic), file:armhf (1:5.44-3)
+End-Date: 2026-05-22  15:37:06
+
+Start-Date: 2026-05-22  16:12:25
+Commandline: apt-get install liblo7 liblo-dev liblo-dev pulseaudio-utils pipewire-jack
+Install: libpolkit-agent-1-0:armhf (122-3, automatic), libserd-0-0:armhf (0.30.16-1, automatic), liblo-dev:armhf (0.31-1), dbus-user-session:armhf (1.14.10-1~deb12u1, automatic), polkitd:armhf (122-3, automatic), libpipewire-0.3-common:armhf (0.3.65-3+deb12u1, automatic), libpam-systemd:armhf (252.39-1~deb12u2, automatic), sgml-base:armhf (1.31, automatic), pipewire-pulse:armhf (0.3.65-3+deb12u1, automatic), dbus-daemon:armhf (1.14.10-1~deb12u1, automatic), pipewire:armhf (0.3.65-3+deb12u1, automatic), dbus-bin:armhf (1.14.10-1~deb12u1, automatic), pipewire-jack:armhf (0.3.65-3+deb12u1), libpolkit-gobject-1-0:armhf (122-3, automatic), pipewire-bin:armhf (0.3.65-3+deb12u1, automatic), dbus-session-bus-common:armhf (1.14.10-1~deb12u1, automatic), libsord-0-0:armhf (0.16.14+git221008-1, automatic), libspa-0.2-modules:armhf (0.3.65-3+deb12u1, automatic), rtkit:armhf (0.13-5, automatic), liblilv-0-0:armhf (0.24.14-1, automatic), libduktape207:armhf (2.7.0-2, automatic), xml-core:armhf (0.18+nmu1, automatic), libpipewire-0.3-modules:armhf (0.3.65-3+deb12u1, automatic), wireplumber:armhf (0.4.13-1, automatic), liblo7:armhf (0.31-1), dbus-system-bus-common:armhf (1.14.10-1~deb12u1, automatic), dbus:armhf (1.14.10-1~deb12u1, automatic), libwireplumber-0.4-0:armhf (0.4.13-1, automatic), libpipewire-0.3-0:armhf (0.3.65-3+deb12u1, automatic), libsratom-0-0:armhf (0.6.14-1, automatic)
+End-Date: 2026-05-22  16:14:47

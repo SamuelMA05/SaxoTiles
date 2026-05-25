@@ -1,0 +1,6 @@
+55822af7956972ce760654e94eb71b0d  usr/lib/systemd/user/pipewire.service
+4a4127d49803fdd26c99a137c64357cc  usr/lib/systemd/user/pipewire.socket
+98049aa5f3b3060ee6a8ea6c5c0ab8a4  usr/share/doc/pipewire/NEWS.gz
+d93ea339cf75cd49bb8e153b09b4ee34  usr/share/doc/pipewire/README.Debian.gz
+f2a4daa72cb23d558329cc453e6c363d  usr/share/doc/pipewire/changelog.Debian.gz
+664b40d25bdb0d6e4f58fde3af0e58e3  usr/share/doc/pipewire/copyright
