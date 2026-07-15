@@ -13,7 +13,7 @@ El sintetizador recibe tres controles principales:
 - **Error (`error`)**: recibe un valor binario (0 o 1). Cuando está activo, mezcla el sonido de la nota con el banco de ruido para desafinar ligeramente la interpretación y representar una nota incorrecta.
 
 Para finalizar, el sonido seleccionado se multiplica por la presión aplicada y por el estado de activación del instrumento, consiguiendo entonces la señal final que se envía al parlante.
-
+```
 import("stdfaust.lib");
 
 harmonics_ruido = harmonicBank(333.0, 1.0, 0.8, 0.6, 0.4, 0.2, 0.1, 0.05, 0.03, 0.02, 0.01, 0.01, 0.01);
@@ -63,3 +63,4 @@ process =
 )
 * envPresion
 * envActivo <: _,_;
+```
