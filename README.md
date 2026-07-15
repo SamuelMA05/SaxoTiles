@@ -18,4 +18,5 @@ El proyecto consiste en la implementación de un Saxofón utilizando el SIP Allw
 
 
 ## Diagrama de flujo
-![.](../Imagenes/dflujo.png)
+
+![Diagrama de flujo](Imagenes/dflujo.png)
