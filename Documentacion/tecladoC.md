@@ -1,63 +1,189 @@
-# Teclado Matricial → Notas Musicales
+# Teclado Matricial
 
-Código en C para leer un teclado físico (vía `/dev/input/eventX`) y convertir combinaciones de teclas presionadas al mismo tiempo en notas musicales, tipo digitación de flauta.
+Este es un código en C para leer un teclado físico (`/dev/input/eventX`) y permite convertir las combinaciones de las teclas presionadas en notas musicales.
 
-## Cómo funciona
+Primero definimos cada tecla como una posición distinta dentro de un entero de 32 bits, para eso utilizamos `<<`. En este caso llegamos hasta el bit 20.
 
-**1) Cada tecla es un bit**
+Lo anterior nos permite guardar el estado de todas las teclas en una sola variable que se llama (`t->state`).
 
-Definimos cada tecla como una posición distinta dentro de un entero de 32 bits, usando `<<`. Llegamos hasta el bit 20.
+Ahora creamos la función `teclado_init()` que abre el device en modo solo lectura y no bloqueante (`O_RDONLY | O_NONBLOCK`).
+`t->state` la arrancamos en 0 (que es el caso de ninguna tecla tocada).
 
-Esto nos permite guardar el estado de todas las teclas en una sola variable (`t->state`) y comparar combinaciones completas como si fueran un solo número, en vez de manejar 21 booleanos sueltos.
-
-**2) Abrimos el dispositivo e iniciamos el estado**
-
-`teclado_init()` abre el device en modo solo lectura y **no bloqueante** (`O_RDONLY | O_NONBLOCK`). Esto es clave: si no fuera no bloqueante, el programa se quedaría esperando a que alguien presione una tecla y todo lo demás se congelaría.
-
-`t->state` arranca en 0 (ninguna tecla tocada). Si falla el `open()`, se imprime el error y se devuelve -1.
-
-**3) Detectamos eventos y actualizamos el estado**
-
+Ahora detectamos eventos con el siguiente formato:
 `update()` recibe cada evento de tecla y prende o apaga el bit correspondiente en `t->state`:
 - Tecla presionada → OR (`|`) para prender el bit
 - Tecla soltada → AND-NOT (`& ~`) para apagarlo
 
-También ignoramos el `value == 2`, que es la autorepetición del sistema (mantener la tecla presionada) y no aporta nada nuevo.
+Nuestra función `map_note()` define la digitación, es decir nos muestra qué combinación exacta de bits es qué nota. `Z` funciona como modificador de octava. Si la combinación no coincide con nada, devuelve -1.
 
-Con esto, `t->state` siempre refleja exactamente qué teclas están sostenidas en ese momento.
 
-**4) Mapeamos combinaciones a notas**
+Por último usamos la función
 
-`map_note()` define la digitación: qué combinación exacta de bits es qué nota. `Z` funciona como modificador de octava. Si la combinación no coincide con nada, devuelve -1.
-
-**5) Leemos el teclado**
-
-`teclado_leer()` es la que se llama en el loop principal. Cada vez:
-1. Lee un evento sin bloquear
-2. Si no hay nada, sale altiro
+`teclado_leer()` que nos permite:  
+1. Leer un evento sin bloquear
 3. Si hay evento de tecla, actualiza el estado con `update()`
 4. Si fue una pulsación (no un soltar), intenta mapear la nota con `map_note()`
 5. Si encontró nota, la guarda en `*nota` y devuelve 1
 
-## Uso
+```
+#include "teclado.h"
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
+#include <stdio.h>
+#include <linux/input.h>
 
-```c
-Teclado t;
-int nota;
+#define Z_BIT (1U << 0)
+#define W_BIT (1U << 1)
+#define R_BIT (1U << 2)
+#define T_BIT (1U << 3)
+#define U_BIT (1U << 4)
+#define I_BIT (1U << 5)
+#define O_BIT (1U << 6)
+#define M_BIT (1U << 7)
+#define C_BIT (1U << 8)
+#define E_BIT (1U << 9)
+#define D_BIT (1U << 10)
+#define J_BIT (1U << 11)
+#define Y_BIT (1U << 12)
+#define N_BIT (1U << 13)
+#define K_BIT (1U << 14)
+#define H_BIT (1U << 15)
+#define G_BIT (1U << 16)
+#define A_BIT (1U << 17)
+#define S_BIT (1U << 18)
+#define X_BIT (1U << 19)
+#define V_BIT (1U << 20)
 
-if (teclado_init(&t, "/dev/input/event3") == 0) {
-    while (1) {
-        if (teclado_leer(&t, &nota)) {
-            // procesar la nota, ej: reproducirla
+int teclado_init(Teclado *t, const char *device)
+{
+    t->fd = open(device, O_RDONLY | O_NONBLOCK);
+    if (t->fd < 0) {
+        perror("[TECLADO] Error open()");
+        return -1;
+    }
+
+    t->state = 0;
+    printf("[TECLADO] Conectado a %s (fd=%d)\n", device, t->fd);
+    return 0;
+}
+
+static void update(Teclado *t, struct input_event *ie)
+{
+    int on = ie->value;
+
+    if (ie->value == 2) return;
+
+    switch (ie->code)
+    {
+        case KEY_Z: t->state = on ? (t->state | Z_BIT) : (t->state & ~Z_BIT); break;
+        case KEY_W: t->state = on ? (t->state | W_BIT) : (t->state & ~W_BIT); break;
+        case KEY_R: t->state = on ? (t->state | R_BIT) : (t->state & ~R_BIT); break;
+        case KEY_T: t->state = on ? (t->state | T_BIT) : (t->state & ~T_BIT); break;
+        case KEY_U: t->state = on ? (t->state | U_BIT) : (t->state & ~U_BIT); break;
+        case KEY_I: t->state = on ? (t->state | I_BIT) : (t->state & ~I_BIT); break;
+        case KEY_O: t->state = on ? (t->state | O_BIT) : (t->state & ~O_BIT); break;
+        case KEY_M: t->state = on ? (t->state | M_BIT) : (t->state & ~M_BIT); break;
+        case KEY_N: t->state = on ? (t->state | N_BIT) : (t->state & ~N_BIT); break;
+        case KEY_K: t->state = on ? (t->state | K_BIT) : (t->state & ~K_BIT); break;
+        case KEY_H: t->state = on ? (t->state | H_BIT) : (t->state & ~H_BIT); break;
+        case KEY_J: t->state = on ? (t->state | J_BIT) : (t->state & ~J_BIT); break;
+        case KEY_G: t->state = on ? (t->state | G_BIT) : (t->state & ~G_BIT); break;
+        case KEY_A: t->state = on ? (t->state | A_BIT) : (t->state & ~A_BIT); break;
+        case KEY_S: t->state = on ? (t->state | S_BIT) : (t->state & ~S_BIT); break;
+        case KEY_D: t->state = on ? (t->state | D_BIT) : (t->state & ~D_BIT); break;
+        case KEY_X: t->state = on ? (t->state | X_BIT) : (t->state & ~X_BIT); break;
+        case KEY_C: t->state = on ? (t->state | C_BIT) : (t->state & ~C_BIT); break;
+        case KEY_V: t->state = on ? (t->state | V_BIT) : (t->state & ~V_BIT); break;
+        default: break;
+    }
+}
+
+static int map_note(uint32_t s)
+{
+    uint32_t base = s & ~Z_BIT;
+    int oct = (s & Z_BIT) ? 1 : 0;
+
+    switch (base)
+    {
+        case (W_BIT|R_BIT|T_BIT|U_BIT|I_BIT|O_BIT|M_BIT):
+            return oct ? 12 : 0;
+
+        case (W_BIT|R_BIT|T_BIT|U_BIT|I_BIT|O_BIT):
+            return oct ? 14 : 2;
+
+        case (W_BIT|R_BIT|T_BIT|U_BIT|I_BIT|O_BIT|N_BIT):
+            return oct ? 15 : 3;
+
+        case (W_BIT|R_BIT|T_BIT|U_BIT|I_BIT):
+            return oct ? 16 : 4;
+
+        case (W_BIT|R_BIT|T_BIT|U_BIT):
+            return oct ? 17 : 5;
+
+        case (W_BIT|R_BIT|T_BIT|I_BIT):
+            return oct ? 18 : 6;
+
+        case (W_BIT|R_BIT|T_BIT):
+            return oct ? 19 : 7;
+
+        case (W_BIT|R_BIT|T_BIT|G_BIT):
+            return oct ? 20 : 8;
+
+        case (W_BIT|R_BIT):
+            return oct ? 21 : 9;
+
+        case (W_BIT|R_BIT|V_BIT):
+            return oct ? 22 : 10;
+
+        case (W_BIT):
+            return oct ? 23 : 11;
+
+        case (R_BIT):
+            return oct ? 24 : 12;
+
+        case (0):
+            return oct ? 25 : 13;
+
+        default:
+            return -1;
+    }
+}
+
+int teclado_leer(Teclado *t, int *nota)
+{
+    struct input_event ie;
+    int got_note = 0;
+
+    ssize_t n = read(t->fd, &ie, sizeof(ie));
+
+    if (n < 0) {
+        return 0;
+    }
+
+    if (n == sizeof(ie)) {
+        printf("[TECLADO] Tipo: %d | Código: %d | Valor: %d\n", ie.type, ie.code, ie.value);
+
+        if (ie.type == EV_KEY) {
+            update(t, &ie);
+
+            if (ie.value == 1) {
+                int nmap = map_note(t->state);
+                if (nmap >= 0) {
+                    *nota = nmap;
+                    got_note = 1;
+                }
+            }
         }
     }
-    teclado_close(&t);
+
+    return got_note;
+}
+
+void teclado_close(Teclado *t)
+{
+    if (t->fd >= 0) {
+        close(t->fd);
+    }
 }
 ```
-
-## Pendientes / cosas raras que noté
-
-- El `printf` de `[TECLADO RAW]` en `teclado_leer()` imprime literalmente todo lo que llega del driver. Sirve para debug pero hay que sacarlo (o meterlo detrás de un flag) antes de usar esto en serio.
-- `C_BIT`, `E_BIT`, `J_BIT` y `Y_BIT` están definidos pero no se usan en `update()`. O es código pendiente o son restos de algo anterior, revisar.
-- Como `map_note()` corre en cada pulsación individual, si al armar un acorde las teclas no caen exactamente al mismo tiempo, pueden salir notas intermedias no deseadas antes de llegar a la combinación final. Si suena mal, capaz valga la pena meter un pequeño debounce.
-- `read()` trata cualquier valor negativo como "no hay datos", sin diferenciar `EAGAIN` (normal en modo no bloqueante) de un error real. Podría revisarse `errno` para distinguir.
