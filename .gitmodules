@@ -1,0 +1,3 @@
+[submodule "saxo_app"]
+	path = saxo_app
+	url = https://github.com/exteruz/saxo_app.git
