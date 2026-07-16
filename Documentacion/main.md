@@ -48,22 +48,6 @@ gcc main.c teclado.c cliente_ws.c \
 
 ---
 
-# Ejecución
-
-Por defecto el programa utiliza el dispositivo de entrada `/dev/input/event0`:
-
-```bash
-./saxo
-```
-
-También es posible indicar manualmente otro dispositivo de entrada:
-
-```bash
-./saxo /dev/input/event1
-```
-
----
-
 # Arquitectura general
 
 ```text
