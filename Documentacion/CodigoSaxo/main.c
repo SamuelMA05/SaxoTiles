@@ -206,7 +206,7 @@ int main(int argc, char *argv[])
     pthread_t pres_thread;
     pthread_create(&pres_thread, NULL, hilo_presion, NULL);
 
-    sleep(1); // Calibración inicial
+    sleep(1);
     printf("\n>>> TRANSMISIÓN INTEGRADA ACTIVA CONTINUA (Sin colisión de hilos) <<<\n\n");
 
     while (1)
@@ -257,7 +257,6 @@ int main(int argc, char *argv[])
 
             if (nombre != NULL)
             {
-                // Combinación válida
                 snprintf(msg, sizeof(msg),
                          "{\"type\":\"note\",\"value\":\"%s\",\"pressure\":%.3f}",
                          nombre, p);
@@ -272,7 +271,6 @@ int main(int argc, char *argv[])
             }
             else
             {
-                // Combinación de transición inválida
                 snprintf(msg, sizeof(msg),
                          "{\"type\":\"note\",\"value\":\"none\",\"pressure\":%.3f}",
                          p);
