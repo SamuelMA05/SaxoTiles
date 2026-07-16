@@ -16,7 +16,8 @@ El proyecto consiste en la implementación de un Saxofón utilizando el SIP Allw
 4) En la aplicación, la pantalla estará dividida en dos partes: La sección izquierda contará con el menú para elegir la melodía a interpretar, y la derecha tendrá un apoyo visual del saxofón para indicarle al usuario físicamente cuál nota debe tocar (con su respectiva digitación).
 5) Al final de la canción se le presentará al usuario un reporte de su puntaje, en el que se indican los porcentajes de fallas y aciertos.
 
-
+ ##Aplicacion web.
+ * **Aplicación Web / Servidor:** [Ir al repositorio de saxp_app](https://github.com/exteruz/saxo_app)
 ## Diagrama de flujo
 
 <p align="center">
