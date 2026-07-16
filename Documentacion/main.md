@@ -1,1 +1,1 @@
-
+Este archivo es la base del proyecto SaxoTiles, un saxofón electrónico construido sobre una placa Allwinner T113 (ARM Cortex-A7) corriendo Debian custom, basado en el hardware Haxophone de cardonabits. [main.c](CodigoSaxo/main.c) integra en un único proceso todos los subsistemas del instrumento:
